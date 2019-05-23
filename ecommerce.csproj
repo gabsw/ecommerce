@@ -1,0 +1,351 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{B53A9EFF-6DB4-4739-912B-710BB2D9AF47}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>ecommerce</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Reviews\AddNewReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reviews\AddNewReview.Designer.cs">
+      <DependentUpon>AddNewReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auctions\Bid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auctions\Bid.Designer.cs">
+      <DependentUpon>Bid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auctions\BidHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auctions\BidHistory.Designer.cs">
+      <DependentUpon>BidHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auctions\Closed_Auctions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auctions\Closed_Auctions.Designer.cs">
+      <DependentUpon>Closed_Auctions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auctions\NewAuction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auctions\NewAuction.Designer.cs">
+      <DependentUpon>NewAuction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auctions\Open_Auctions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auctions\Open_Auctions.Designer.cs">
+      <DependentUpon>Open_Auctions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\AddNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\AddNewProduct.Designer.cs">
+      <DependentUpon>AddNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reviews\Reviews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reviews\Reviews.Designer.cs">
+      <DependentUpon>Reviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unused - obj_tables\Account1.cs" />
+    <Compile Include="Account\Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\CreditHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\CreditHistory.Designer.cs">
+      <DependentUpon>CreditHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\DebitHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\DebitHistory.Designer.cs">
+      <DependentUpon>DebitHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\NewDebit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\NewDebit.Designer.cs">
+      <DependentUpon>NewDebit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\AddNewCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\AddNewCat.Designer.cs">
+      <DependentUpon>AddNewCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\AddNewDeliveryComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\AddNewDeliveryComp.Designer.cs">
+      <DependentUpon>AddNewDeliveryComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unused - obj_tables\Admin.cs" />
+    <Compile Include="Admin_Profiles\AddNewAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Profiles\AddNewAdmin.Designer.cs">
+      <DependentUpon>AddNewAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Profiles\Admin_Profiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Profiles\Admin_Profiles.Designer.cs">
+      <DependentUpon>Admin_Profiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Profiles\UpdateAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Profiles\UpdateAdmin.Designer.cs">
+      <DependentUpon>UpdateAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unused - obj_tables\Category.cs" />
+    <Compile Include="Stats\Cat_Stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stats\Cat_Stats.Designer.cs">
+      <DependentUpon>Cat_Stats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbConnectionFactory.cs" />
+    <Compile Include="Unused - obj_tables\DeliveryCompany.cs" />
+    <Compile Include="Delivery\Delivery_Comp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\Delivery_Comp.Designer.cs">
+      <DependentUpon>Delivery_Comp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stats\Delivery_Stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stats\Delivery_Stats.Designer.cs">
+      <DependentUpon>Delivery_Stats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormValidation.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\Prod_Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\Prod_Category.Designer.cs">
+      <DependentUpon>Prod_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Product_Buyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\Product_Buyer.Designer.cs">
+      <DependentUpon>Product_Buyer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Product_Seller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\Product_Seller.Designer.cs">
+      <DependentUpon>Product_Seller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Unused - obj_tables\RegularUser.cs" />
+    <Compile Include="RU_Profiles\AddNewRUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RU_Profiles\AddNewRUser.Designer.cs">
+      <DependentUpon>AddNewRUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RU_Profiles\RU_Profiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RU_Profiles\RU_Profiles.Designer.cs">
+      <DependentUpon>RU_Profiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stats\RU_Stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stats\RU_Stats.Designer.cs">
+      <DependentUpon>RU_Stats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RU_Profiles\UpdateRUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RU_Profiles\UpdateRUser.Designer.cs">
+      <DependentUpon>UpdateRUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\UpdateCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\UpdateCat.Designer.cs">
+      <DependentUpon>UpdateCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\UpdateDeliveryComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\UpdateDeliveryComp.Designer.cs">
+      <DependentUpon>UpdateDeliveryComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\UpdateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\UpdateProduct.Designer.cs">
+      <DependentUpon>UpdateProduct.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Account\Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\CreditHistory.resx">
+      <DependentUpon>CreditHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\DebitHistory.resx">
+      <DependentUpon>DebitHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\NewDebit.resx">
+      <DependentUpon>NewDebit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reviews\AddNewReview.resx">
+      <DependentUpon>AddNewReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auctions\Bid.resx">
+      <DependentUpon>Bid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auctions\BidHistory.resx">
+      <DependentUpon>BidHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auctions\Closed_Auctions.resx">
+      <DependentUpon>Closed_Auctions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auctions\NewAuction.resx">
+      <DependentUpon>NewAuction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auctions\Open_Auctions.resx">
+      <DependentUpon>Open_Auctions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\AddNewProduct.resx">
+      <DependentUpon>AddNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\AddNewCat.resx">
+      <DependentUpon>AddNewCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\AddNewDeliveryComp.resx">
+      <DependentUpon>AddNewDeliveryComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Profiles\AddNewAdmin.resx">
+      <DependentUpon>AddNewAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Profiles\Admin_Profiles.resx">
+      <DependentUpon>Admin_Profiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Profiles\UpdateAdmin.resx">
+      <DependentUpon>UpdateAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reviews\Reviews.resx">
+      <DependentUpon>Reviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stats\Cat_Stats.resx">
+      <DependentUpon>Cat_Stats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\Delivery_Comp.resx">
+      <DependentUpon>Delivery_Comp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stats\Delivery_Stats.resx">
+      <DependentUpon>Delivery_Stats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\Prod_Category.resx">
+      <DependentUpon>Prod_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\Product_Buyer.resx">
+      <DependentUpon>Product_Buyer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\Product_Seller.resx">
+      <DependentUpon>Product_Seller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="RU_Profiles\AddNewRUser.resx">
+      <DependentUpon>AddNewRUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RU_Profiles\RU_Profiles.resx">
+      <DependentUpon>RU_Profiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stats\RU_Stats.resx">
+      <DependentUpon>RU_Stats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RU_Profiles\UpdateRUser.resx">
+      <DependentUpon>UpdateRUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\UpdateCat.resx">
+      <DependentUpon>UpdateCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\UpdateDeliveryComp.resx">
+      <DependentUpon>UpdateDeliveryComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\UpdateProduct.resx">
+      <DependentUpon>UpdateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\ecommerce - v2\v15\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

@@ -47,10 +47,11 @@
             this.colExpress});
             this.DeliveryCompLV.FullRowSelect = true;
             this.DeliveryCompLV.GridLines = true;
-            this.DeliveryCompLV.Location = new System.Drawing.Point(51, 57);
+            this.DeliveryCompLV.Location = new System.Drawing.Point(68, 70);
+            this.DeliveryCompLV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeliveryCompLV.MultiSelect = false;
             this.DeliveryCompLV.Name = "DeliveryCompLV";
-            this.DeliveryCompLV.Size = new System.Drawing.Size(546, 227);
+            this.DeliveryCompLV.Size = new System.Drawing.Size(727, 278);
             this.DeliveryCompLV.TabIndex = 0;
             this.DeliveryCompLV.UseCompatibleStateImageBehavior = false;
             this.DeliveryCompLV.View = System.Windows.Forms.View.Details;
@@ -80,9 +81,10 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(272, 323);
+            this.updateButton.Location = new System.Drawing.Point(363, 398);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(68, 20);
+            this.updateButton.Size = new System.Drawing.Size(91, 25);
             this.updateButton.TabIndex = 10;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
@@ -90,9 +92,10 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(359, 323);
+            this.refreshButton.Location = new System.Drawing.Point(479, 398);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(67, 20);
+            this.refreshButton.Size = new System.Drawing.Size(89, 25);
             this.refreshButton.TabIndex = 8;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -100,9 +103,10 @@
             // 
             // AddNewButton
             // 
-            this.AddNewButton.Location = new System.Drawing.Point(181, 323);
+            this.AddNewButton.Location = new System.Drawing.Point(241, 398);
+            this.AddNewButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddNewButton.Name = "AddNewButton";
-            this.AddNewButton.Size = new System.Drawing.Size(67, 20);
+            this.AddNewButton.Size = new System.Drawing.Size(89, 25);
             this.AddNewButton.TabIndex = 7;
             this.AddNewButton.Text = "Add New";
             this.AddNewButton.UseVisualStyleBackColor = true;
@@ -110,13 +114,14 @@
             // 
             // Delivery_Comp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 450);
+            this.ClientSize = new System.Drawing.Size(903, 554);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.DeliveryCompLV);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Delivery_Comp";
             this.Text = "Delivery Companies";
             this.Load += new System.EventHandler(this.Delivery_Comp_Load);

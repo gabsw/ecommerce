@@ -190,5 +190,15 @@ namespace ecommerce
             f.MdiParent = this;
             f.Show();
         }
+
+        private void InternalOperationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            InternalOperation f = new InternalOperation();
+
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

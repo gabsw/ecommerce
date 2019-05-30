@@ -32,6 +32,24 @@
   <PropertyGroup>
     <RootNamespace>ecommerce</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,6 +66,18 @@
     </Compile>
     <Compile Include="Internal Operation\InternalOperation.Designer.cs">
       <DependentUpon>InternalOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments\Payments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\Payments.Designer.cs">
+      <DependentUpon>Payments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments\PayPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\PayPayment.Designer.cs">
+      <DependentUpon>PayPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="Reviews\AddNewReview.cs">
       <SubType>Form</SubType>
@@ -262,6 +292,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Internal Operation\InternalOperation.resx">
       <DependentUpon>InternalOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments\Payments.resx">
+      <DependentUpon>Payments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments\PayPayment.resx">
+      <DependentUpon>PayPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reviews\AddNewReview.resx">
       <DependentUpon>AddNewReview.cs</DependentUpon>

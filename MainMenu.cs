@@ -200,5 +200,15 @@ namespace ecommerce
             f.MdiParent = this;
             f.Show();
         }
+
+        private void PaymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Payments f = new Payments();
+
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

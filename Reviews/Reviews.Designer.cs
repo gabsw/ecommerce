@@ -31,6 +31,7 @@
             this.reviewsLV = new System.Windows.Forms.ListView();
             this.review = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.purchase = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.productCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buyer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.seller = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rating = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,7 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sellerBox = new System.Windows.Forms.ComboBox();
             this.clear_button = new System.Windows.Forms.Button();
-            this.productCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.purchase2Box = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -62,9 +62,10 @@
             this.date,
             this.comment});
             this.reviewsLV.GridLines = true;
-            this.reviewsLV.Location = new System.Drawing.Point(29, 25);
+            this.reviewsLV.Location = new System.Drawing.Point(39, 31);
+            this.reviewsLV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reviewsLV.Name = "reviewsLV";
-            this.reviewsLV.Size = new System.Drawing.Size(805, 204);
+            this.reviewsLV.Size = new System.Drawing.Size(1072, 250);
             this.reviewsLV.TabIndex = 0;
             this.reviewsLV.UseCompatibleStateImageBehavior = false;
             this.reviewsLV.View = System.Windows.Forms.View.Details;
@@ -79,6 +80,12 @@
             this.purchase.Text = "Purchase ID";
             this.purchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.purchase.Width = 72;
+            // 
+            // productCode
+            // 
+            this.productCode.Text = "Product Code";
+            this.productCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.productCode.Width = 90;
             // 
             // buyer
             // 
@@ -111,9 +118,10 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(231, 242);
+            this.addButton.Location = new System.Drawing.Point(308, 298);
+            this.addButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(72, 25);
+            this.addButton.Size = new System.Drawing.Size(96, 31);
             this.addButton.TabIndex = 3;
             this.addButton.Text = "Add New";
             this.addButton.UseVisualStyleBackColor = true;
@@ -121,9 +129,10 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(542, 242);
+            this.refreshButton.Location = new System.Drawing.Point(723, 298);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(72, 25);
+            this.refreshButton.Size = new System.Drawing.Size(96, 31);
             this.refreshButton.TabIndex = 5;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -132,96 +141,99 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(867, 78);
+            this.label1.Location = new System.Drawing.Point(1156, 96);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(126, 17);
             this.label1.TabIndex = 74;
             this.label1.Text = "Buyer\'s username:";
             // 
             // buyerBox
             // 
             this.buyerBox.FormattingEnabled = true;
-            this.buyerBox.Location = new System.Drawing.Point(870, 103);
+            this.buyerBox.Location = new System.Drawing.Point(1160, 127);
+            this.buyerBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buyerBox.Name = "buyerBox";
-            this.buyerBox.Size = new System.Drawing.Size(186, 21);
+            this.buyerBox.Size = new System.Drawing.Size(247, 24);
             this.buyerBox.TabIndex = 73;
             this.buyerBox.SelectedIndexChanged += new System.EventHandler(this.buyerBox_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(867, 150);
+            this.label2.Location = new System.Drawing.Point(1156, 185);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(98, 17);
             this.label2.TabIndex = 76;
             this.label2.Text = "All Purchases:";
             // 
             // purchaseBox
             // 
             this.purchaseBox.FormattingEnabled = true;
-            this.purchaseBox.Location = new System.Drawing.Point(870, 175);
+            this.purchaseBox.Location = new System.Drawing.Point(1160, 215);
+            this.purchaseBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.purchaseBox.Name = "purchaseBox";
-            this.purchaseBox.Size = new System.Drawing.Size(186, 21);
+            this.purchaseBox.Size = new System.Drawing.Size(247, 24);
             this.purchaseBox.TabIndex = 75;
             this.purchaseBox.SelectedIndexChanged += new System.EventHandler(this.purchaseBox_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(868, 9);
+            this.label3.Location = new System.Drawing.Point(1157, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.Size = new System.Drawing.Size(125, 17);
             this.label3.TabIndex = 78;
             this.label3.Text = "Seller\'s username:";
             // 
             // sellerBox
             // 
             this.sellerBox.FormattingEnabled = true;
-            this.sellerBox.Location = new System.Drawing.Point(870, 36);
+            this.sellerBox.Location = new System.Drawing.Point(1160, 44);
+            this.sellerBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sellerBox.Name = "sellerBox";
-            this.sellerBox.Size = new System.Drawing.Size(186, 21);
+            this.sellerBox.Size = new System.Drawing.Size(247, 24);
             this.sellerBox.TabIndex = 77;
             this.sellerBox.SelectedIndexChanged += new System.EventHandler(this.sellerBox_SelectedIndexChanged);
             // 
             // clear_button
             // 
-            this.clear_button.Location = new System.Drawing.Point(380, 243);
+            this.clear_button.Location = new System.Drawing.Point(507, 299);
+            this.clear_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clear_button.Name = "clear_button";
-            this.clear_button.Size = new System.Drawing.Size(88, 22);
+            this.clear_button.Size = new System.Drawing.Size(117, 27);
             this.clear_button.TabIndex = 79;
             this.clear_button.Text = "Clear";
             this.clear_button.UseVisualStyleBackColor = true;
             this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
             // 
-            // productCode
-            // 
-            this.productCode.Text = "Product Code";
-            this.productCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.productCode.Width = 90;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(867, 216);
+            this.label4.Location = new System.Drawing.Point(1156, 266);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 13);
+            this.label4.Size = new System.Drawing.Size(213, 17);
             this.label4.TabIndex = 81;
             this.label4.Text = "Purchases with pending reviews:";
             // 
             // purchase2Box
             // 
             this.purchase2Box.FormattingEnabled = true;
-            this.purchase2Box.Location = new System.Drawing.Point(870, 242);
+            this.purchase2Box.Location = new System.Drawing.Point(1160, 298);
+            this.purchase2Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.purchase2Box.Name = "purchase2Box";
-            this.purchase2Box.Size = new System.Drawing.Size(186, 21);
+            this.purchase2Box.Size = new System.Drawing.Size(247, 24);
             this.purchase2Box.TabIndex = 80;
             this.purchase2Box.SelectedIndexChanged += new System.EventHandler(this.purchase2_SelectedIndexChanged);
             // 
             // Reviews
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 279);
+            this.ClientSize = new System.Drawing.Size(1424, 378);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.purchase2Box);
             this.Controls.Add(this.clear_button);
@@ -234,6 +246,7 @@
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.reviewsLV);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Reviews";
             this.Text = "Reviews";
             this.Load += new System.EventHandler(this.Reviews_Load);

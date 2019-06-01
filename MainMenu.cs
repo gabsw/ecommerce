@@ -181,15 +181,6 @@ namespace ecommerce
             f.Show();
         }
 
-        private void reviewsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.IsMdiContainer = true;
-
-            Reviews f = new Reviews();
-
-            f.MdiParent = this;
-            f.Show();
-        }
 
         private void InternalOperationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -206,6 +197,26 @@ namespace ecommerce
             this.IsMdiContainer = true;
 
             Payments f = new Payments();
+
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void completedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Completed_Reviews f = new Completed_Reviews();
+
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void pendingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Pending_Reviews f = new Pending_Reviews();
 
             f.MdiParent = this;
             f.Show();

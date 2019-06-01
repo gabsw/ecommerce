@@ -14,9 +14,9 @@ namespace ecommerce
     {
         private String buyer;
         private String seller;
-        private int purchaseID;
+        private String purchaseID;
 
-        public AddNewReview(int purchaseID, String buyer, String seller)
+        public AddNewReview(String purchaseID, String buyer, String seller)
         {
             InitializeComponent();
             this.buyer = buyer;

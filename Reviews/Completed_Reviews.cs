@@ -10,36 +10,11 @@ using System.Windows.Forms;
 
 namespace ecommerce
 {
-    public partial class Reviews : Form
+    public partial class Completed_Reviews : Form
     {
-        public Reviews()
+        public Completed_Reviews()
         {
             InitializeComponent();
-        }
-
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            if (purchase2Box.Text == "")
-            {
-                MessageBox.Show("You need to choose a purchase with a pending review.", "Error alert",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            else
-            {
-                // PRECISO DE FAZER DEBUG DESTA PARTE
-                int purchase_ID = Convert.ToInt32(purchase2Box.Text);
-
-                String buyer_username = getBuyer(purchase_ID);
-                String seller_username = getSeller(purchase_ID);
-
-                AddNewReview f1 = new AddNewReview(purchase_ID, buyer_username, seller_username);
-                f1.Show();
-            }
-
-            reviewsLV.Items.Clear();
-            populateListView();
-            this.Refresh();
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
@@ -54,7 +29,6 @@ namespace ecommerce
             sellerBox.Text = "";
             buyerBox.Text = "";
             purchaseBox.Text = "";
-            purchase2Box.Text = "";
             reviewsLV.Items.Clear();
             populateListView();
             this.Refresh();
@@ -65,12 +39,10 @@ namespace ecommerce
             sellerBox.Items.Clear();
             buyerBox.Items.Clear();
             purchaseBox.Items.Clear();
-            purchase2Box.Items.Clear();
             reviewsLV.Items.Clear();
             populateSellerBox();
             populateBuyerBox();
             populateAllPurchaseBox();
-            populatePurchaseWithoutReviewsBox();
             populateListView();
         }
 
@@ -91,7 +63,6 @@ namespace ecommerce
         private void purchaseBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             reviewsLV.Items.Clear();
-            purchase2Box.Text = "";
             populateListView();
             this.Refresh();
         }
@@ -148,33 +119,7 @@ namespace ecommerce
             }
         }
 
-        private void populatePurchaseWithoutReviewsBox()
-        {
-            SqlConnection con = DbConnectionFactory.newConnection();
-
-            try
-            {
-                con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT Purchase_Completed FROM ecommerce.VIEW_REVIEW_DETAILS " +
-                    "WHERE Purchase_Associated_Review IS NULL", con);
-
-                SqlDataReader rd1 = cm1.ExecuteReader();
-
-                while (rd1.Read())
-                {
-                    purchaseBox.Items.Add(rd1["Purchase_Completed"].ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
+        
         private void populateAllPurchaseBox()
         {
             SqlConnection con = DbConnectionFactory.newConnection();
@@ -265,21 +210,6 @@ namespace ecommerce
             }
         }
 
-        private void purchase2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            reviewsLV.Items.Clear();
-            sellerBox.Items.Clear();
-            buyerBox.Items.Clear();
-            purchaseBox.Items.Clear();
-
-            int purchase_ID = Convert.ToInt32(purchase2Box.Text);
-
-            purchaseBox.Text = "";
-            buyerBox.Text = getBuyer(purchase_ID);
-            sellerBox.Text = getSeller(purchase_ID);
-            this.Refresh();
-        }
-
         private String getSeller(int purchaseID)
         {
 
@@ -334,6 +264,36 @@ namespace ecommerce
             {
                 con.Close();
             }
+        }
+
+        private void OpenReview_Click(object sender, EventArgs e)
+        {
+            if (reviewsLV.SelectedItems.Count == 1)
+            {
+                ListViewItem item = reviewsLV.SelectedItems[0];
+
+                String reviewID = item.SubItems[0].Text;
+                String purchaseID = item.SubItems[1].Text;
+                String productCode = item.SubItems[2].Text;
+                String buyer = item.SubItems[3].Text;
+                String seller = item.SubItems[4].Text;
+                String rating = item.SubItems[5].Text;
+                String date = item.SubItems[6].Text;
+                String comment = item.SubItems[7].Text;
+
+                ReadReview f = new ReadReview(reviewID, purchaseID, buyer, seller,
+                    productCode, rating, comment, date);
+                f.Show();
+            }
+            else
+            {
+                MessageBox.Show("You need to choose an user from the list to update.", "Error alert",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            reviewsLV.Items.Clear();
+            populateListView();
+            this.Refresh();
         }
     }
 }

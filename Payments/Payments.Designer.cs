@@ -214,7 +214,6 @@
             this.payButton.TabIndex = 1;
             this.payButton.Text = "Pay";
             this.payButton.UseVisualStyleBackColor = true;
-            this.payButton.Click += new System.EventHandler(this.PayButton_Click);
             // 
             // Payments
             // 

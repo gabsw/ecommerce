@@ -55,6 +55,8 @@
             this.shippingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.completedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.completedToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -239,6 +241,9 @@
             // 
             // purchasesToolStripMenuItem
             // 
+            this.purchasesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.completedToolStripMenuItem1,
+            this.pendingToolStripMenuItem1});
             this.purchasesToolStripMenuItem.Name = "purchasesToolStripMenuItem";
             this.purchasesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.purchasesToolStripMenuItem.Text = "Purchases";
@@ -271,6 +276,18 @@
             this.pendingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pendingToolStripMenuItem.Text = "Pending";
             this.pendingToolStripMenuItem.Click += new System.EventHandler(this.pendingToolStripMenuItem_Click);
+            // 
+            // completedToolStripMenuItem1
+            // 
+            this.completedToolStripMenuItem1.Name = "completedToolStripMenuItem1";
+            this.completedToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.completedToolStripMenuItem1.Text = "Completed";
+            // 
+            // pendingToolStripMenuItem1
+            // 
+            this.pendingToolStripMenuItem1.Name = "pendingToolStripMenuItem1";
+            this.pendingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pendingToolStripMenuItem1.Text = "Pending";
             // 
             // MainMenu
             // 
@@ -318,6 +335,8 @@
         private System.Windows.Forms.ToolStripMenuItem regularUsersToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem completedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pendingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem completedToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pendingToolStripMenuItem1;
     }
 }
 

@@ -46,6 +46,7 @@
             this.sellerBox = new System.Windows.Forms.ComboBox();
             this.clear_button = new System.Windows.Forms.Button();
             this.OpenReview = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // reviewsLV
@@ -130,7 +131,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(918, 100);
+            this.label1.Location = new System.Drawing.Point(917, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 74;
@@ -139,7 +140,7 @@
             // buyerBox
             // 
             this.buyerBox.FormattingEnabled = true;
-            this.buyerBox.Location = new System.Drawing.Point(921, 125);
+            this.buyerBox.Location = new System.Drawing.Point(920, 145);
             this.buyerBox.Name = "buyerBox";
             this.buyerBox.Size = new System.Drawing.Size(186, 21);
             this.buyerBox.TabIndex = 73;
@@ -148,7 +149,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(918, 172);
+            this.label2.Location = new System.Drawing.Point(917, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 76;
@@ -157,7 +158,7 @@
             // purchaseBox
             // 
             this.purchaseBox.FormattingEnabled = true;
-            this.purchaseBox.Location = new System.Drawing.Point(921, 197);
+            this.purchaseBox.Location = new System.Drawing.Point(920, 217);
             this.purchaseBox.Name = "purchaseBox";
             this.purchaseBox.Size = new System.Drawing.Size(186, 21);
             this.purchaseBox.TabIndex = 75;
@@ -166,7 +167,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(919, 31);
+            this.label3.Location = new System.Drawing.Point(918, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 78;
@@ -175,7 +176,7 @@
             // sellerBox
             // 
             this.sellerBox.FormattingEnabled = true;
-            this.sellerBox.Location = new System.Drawing.Point(921, 58);
+            this.sellerBox.Location = new System.Drawing.Point(920, 78);
             this.sellerBox.Name = "sellerBox";
             this.sellerBox.Size = new System.Drawing.Size(186, 21);
             this.sellerBox.TabIndex = 77;
@@ -201,11 +202,22 @@
             this.OpenReview.UseVisualStyleBackColor = true;
             this.OpenReview.Click += new System.EventHandler(this.OpenReview_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(967, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 13);
+            this.label4.TabIndex = 81;
+            this.label4.Text = "Search Filters";
+            // 
             // Completed_Reviews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 307);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.OpenReview);
             this.Controls.Add(this.clear_button);
             this.Controls.Add(this.label3);
@@ -244,5 +256,6 @@
         private System.Windows.Forms.Button clear_button;
         private System.Windows.Forms.ColumnHeader productCode;
         private System.Windows.Forms.Button OpenReview;
+        private System.Windows.Forms.Label label4;
     }
 }

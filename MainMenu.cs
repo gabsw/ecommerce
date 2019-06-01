@@ -14,9 +14,10 @@ namespace ecommerce
         {
             InitializeComponent();
 
-            ThreadStart childref = new ThreadStart(closeAuctions);
-            Thread childThread = new Thread(childref);
-            childThread.Start();
+            // Corrigir SP
+            //ThreadStart childref = new ThreadStart(closeAuctions);
+            //Thread childThread = new Thread(childref);
+            //childThread.Start();
         }
 
         private static void closeAuctions()
@@ -217,6 +218,26 @@ namespace ecommerce
             this.IsMdiContainer = true;
 
             Pending_Reviews f = new Pending_Reviews();
+
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void completedToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Completed_Purchase f = new Completed_Purchase();
+
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void pendingToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Pending_Purchase f = new Pending_Purchase();
 
             f.MdiParent = this;
             f.Show();

@@ -124,8 +124,23 @@ namespace ecommerce
                 {
                     ListViewItem item = new ListViewItem(rd1["Code"].ToString());
                     item.SubItems.Add(rd1["Product_Name"].ToString());
-                    item.SubItems.Add(rd1["username_Seller"].ToString());
-                    item.SubItems.Add(rd1["Status"].ToString());
+
+                    String seller_username = rd1["username_Seller"].ToString();
+                    item.SubItems.Add(seller_username);
+
+                    String seller_rating = rd1["rating_Seller"].ToString();
+
+                    if (sellerHasReviews(seller_username))
+                    {
+                        item.SubItems.Add(seller_rating);
+                    }
+
+                    else
+                    {
+                        item.SubItems.Add("Not Rated");
+                    }
+
+                    item.SubItems.Add(rd1["Status"].ToString()); 
                     item.SubItems.Add(rd1["Category_Name"].ToString());
                     item.SubItems.Add(rd1["Description"].ToString());
 
@@ -384,7 +399,7 @@ namespace ecommerce
             {
                 con.Open();
 
-                // Check if username already exists
+                // Check if auction already exists
                 SqlCommand cm1 = new SqlCommand("SELECT COUNT(*) " +
                     "FROM ecommerce.AUCTION " +
                     "WHERE ProductCode = @ProductCode", con);
@@ -396,6 +411,65 @@ namespace ecommerce
                 if (qty_auctions == 0)
                 {
                     
+                    return false;
+                }
+
+                else
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (ProdSellerLV.SelectedItems.Count == 1)
+            {
+                ListViewItem item = ProdSellerLV.SelectedItems[0];
+
+                String productCode = item.SubItems[0].Text;
+                String productName = item.SubItems[1].Text;
+                String description = item.SubItems[6].Text;
+
+                ReadFullDescription f = new ReadFullDescription(productCode, productName, description);
+                f.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("You need to choose a product to read its description.", "Error alert",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool sellerHasReviews(String username)
+        {
+            SqlConnection con = DbConnectionFactory.newConnection();
+            try
+            {
+                con.Open();
+
+                SqlCommand cm1 = new SqlCommand("SELECT COUNT(*) " +
+                    "FROM ecommerce.VIEW_SELLER_RATING " +
+                    "WHERE userName = @userName", con);
+
+                cm1.Parameters.Add("@userName", SqlDbType.VarChar).Value = username;
+
+                int qty_reviews = (int)cm1.ExecuteScalar();
+
+                if (qty_reviews == 0)
+                {
+
                     return false;
                 }
 

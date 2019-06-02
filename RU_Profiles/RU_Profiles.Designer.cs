@@ -127,7 +127,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listViewRU);
             this.Name = "RU_Profiles";
-            this.Text = "RU_Profiles";
+            this.Text = "User Profiles";
             this.Load += new System.EventHandler(this.RU_Profiles_Load_1);
             this.ResumeLayout(false);
 

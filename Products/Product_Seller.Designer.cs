@@ -49,6 +49,8 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.auctionbttn = new System.Windows.Forms.Button();
+            this.colSellerRating = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.descriptionBttn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ProdSellerLV
@@ -57,15 +59,16 @@
             this.colCode,
             this.colName,
             this.colSeller,
+            this.colSellerRating,
             this.colStatus,
             this.colCategory,
             this.colDescription});
             this.ProdSellerLV.FullRowSelect = true;
             this.ProdSellerLV.GridLines = true;
-            this.ProdSellerLV.Location = new System.Drawing.Point(53, 26);
+            this.ProdSellerLV.Location = new System.Drawing.Point(68, 12);
             this.ProdSellerLV.MultiSelect = false;
             this.ProdSellerLV.Name = "ProdSellerLV";
-            this.ProdSellerLV.Size = new System.Drawing.Size(725, 234);
+            this.ProdSellerLV.Size = new System.Drawing.Size(713, 234);
             this.ProdSellerLV.TabIndex = 0;
             this.ProdSellerLV.UseCompatibleStateImageBehavior = false;
             this.ProdSellerLV.View = System.Windows.Forms.View.Details;
@@ -88,20 +91,23 @@
             // 
             // colStatus
             // 
+            this.colStatus.DisplayIndex = 4;
             this.colStatus.Text = "Status";
             this.colStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // colCategory
             // 
+            this.colCategory.DisplayIndex = 5;
             this.colCategory.Text = "Category";
             this.colCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colCategory.Width = 90;
             // 
             // colDescription
             // 
+            this.colDescription.DisplayIndex = 6;
             this.colDescription.Text = "Description";
             this.colDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colDescription.Width = 281;
+            this.colDescription.Width = 179;
             // 
             // sellerBox
             // 
@@ -150,7 +156,7 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(655, 280);
+            this.refreshButton.Location = new System.Drawing.Point(693, 278);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(88, 22);
             this.refreshButton.TabIndex = 12;
@@ -160,7 +166,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(533, 280);
+            this.updateButton.Location = new System.Drawing.Point(574, 278);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(88, 22);
             this.updateButton.TabIndex = 11;
@@ -170,7 +176,7 @@
             // 
             // addNewButton
             // 
-            this.addNewButton.Location = new System.Drawing.Point(409, 280);
+            this.addNewButton.Location = new System.Drawing.Point(450, 278);
             this.addNewButton.Name = "addNewButton";
             this.addNewButton.Size = new System.Drawing.Size(88, 22);
             this.addNewButton.TabIndex = 10;
@@ -180,7 +186,7 @@
             // 
             // sellButton
             // 
-            this.sellButton.Location = new System.Drawing.Point(92, 280);
+            this.sellButton.Location = new System.Drawing.Point(68, 278);
             this.sellButton.Name = "sellButton";
             this.sellButton.Size = new System.Drawing.Size(88, 22);
             this.sellButton.TabIndex = 13;
@@ -237,7 +243,7 @@
             // 
             // auctionbttn
             // 
-            this.auctionbttn.Location = new System.Drawing.Point(212, 278);
+            this.auctionbttn.Location = new System.Drawing.Point(189, 278);
             this.auctionbttn.Name = "auctionbttn";
             this.auctionbttn.Size = new System.Drawing.Size(88, 22);
             this.auctionbttn.TabIndex = 73;
@@ -245,11 +251,29 @@
             this.auctionbttn.UseVisualStyleBackColor = true;
             this.auctionbttn.Click += new System.EventHandler(this.auctionbttn_Click);
             // 
+            // colSellerRating
+            // 
+            this.colSellerRating.DisplayIndex = 3;
+            this.colSellerRating.Text = "Seller Rating";
+            this.colSellerRating.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colSellerRating.Width = 82;
+            // 
+            // descriptionBttn
+            // 
+            this.descriptionBttn.Location = new System.Drawing.Point(316, 278);
+            this.descriptionBttn.Name = "descriptionBttn";
+            this.descriptionBttn.Size = new System.Drawing.Size(98, 22);
+            this.descriptionBttn.TabIndex = 74;
+            this.descriptionBttn.Text = "Read Description";
+            this.descriptionBttn.UseVisualStyleBackColor = true;
+            this.descriptionBttn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Product_Seller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 388);
+            this.Controls.Add(this.descriptionBttn);
             this.Controls.Add(this.auctionbttn);
             this.Controls.Add(this.clear_button);
             this.Controls.Add(this.searchButton);
@@ -296,5 +320,7 @@
         private System.Windows.Forms.ColumnHeader colSeller;
         private System.Windows.Forms.ColumnHeader colStatus;
         private System.Windows.Forms.Button auctionbttn;
+        private System.Windows.Forms.ColumnHeader colSellerRating;
+        private System.Windows.Forms.Button descriptionBttn;
     }
 }

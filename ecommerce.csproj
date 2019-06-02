@@ -61,6 +61,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Products\ReadFullDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\ReadFullDescription.Designer.cs">
+      <DependentUpon>ReadFullDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Purchase\Completed_Purchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Account\NewDebit.resx">
       <DependentUpon>NewDebit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\ReadFullDescription.resx">
+      <DependentUpon>ReadFullDescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Purchase\Completed_Purchase.resx">
       <DependentUpon>Completed_Purchase.cs</DependentUpon>

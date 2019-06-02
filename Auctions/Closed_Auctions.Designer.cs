@@ -32,7 +32,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.high_bid_bttn = new System.Windows.Forms.RadioButton();
             this.auctionID_bttn = new System.Windows.Forms.RadioButton();
-            this.statsButton = new System.Windows.Forms.Button();
             this.ClosedAuctionLV = new System.Windows.Forms.ListView();
             this.auctionID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.productCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,7 +46,7 @@
             // 
             // product_info_bttn
             // 
-            this.product_info_bttn.Location = new System.Drawing.Point(581, 274);
+            this.product_info_bttn.Location = new System.Drawing.Point(447, 274);
             this.product_info_bttn.Name = "product_info_bttn";
             this.product_info_bttn.Size = new System.Drawing.Size(115, 22);
             this.product_info_bttn.TabIndex = 91;
@@ -87,15 +86,6 @@
             this.auctionID_bttn.Text = "Auction ID";
             this.auctionID_bttn.UseVisualStyleBackColor = true;
             this.auctionID_bttn.CheckedChanged += new System.EventHandler(this.auctionID_bttn_CheckedChanged);
-            // 
-            // statsButton
-            // 
-            this.statsButton.Location = new System.Drawing.Point(425, 274);
-            this.statsButton.Name = "statsButton";
-            this.statsButton.Size = new System.Drawing.Size(115, 22);
-            this.statsButton.TabIndex = 86;
-            this.statsButton.Text = "Statistics";
-            this.statsButton.UseVisualStyleBackColor = true;
             // 
             // ClosedAuctionLV
             // 
@@ -176,7 +166,7 @@
             // 
             // refresh_button
             // 
-            this.refresh_button.Location = new System.Drawing.Point(739, 274);
+            this.refresh_button.Location = new System.Drawing.Point(605, 274);
             this.refresh_button.Name = "refresh_button";
             this.refresh_button.Size = new System.Drawing.Size(115, 22);
             this.refresh_button.TabIndex = 95;
@@ -196,7 +186,6 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.high_bid_bttn);
             this.Controls.Add(this.auctionID_bttn);
-            this.Controls.Add(this.statsButton);
             this.Controls.Add(this.ClosedAuctionLV);
             this.Name = "Closed_Auctions";
             this.Text = "Closed Auctions";
@@ -212,7 +201,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RadioButton high_bid_bttn;
         private System.Windows.Forms.RadioButton auctionID_bttn;
-        private System.Windows.Forms.Button statsButton;
         private System.Windows.Forms.ListView ClosedAuctionLV;
         private System.Windows.Forms.ColumnHeader auctionID;
         private System.Windows.Forms.ColumnHeader currentWinner;

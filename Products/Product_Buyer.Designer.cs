@@ -44,6 +44,7 @@
             this.allCategories = new System.Windows.Forms.CheckBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.clear_button = new System.Windows.Forms.Button();
+            this.descriptionBttn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ProdBuyerLV
@@ -119,9 +120,9 @@
             // 
             // auctionButton
             // 
-            this.auctionButton.Location = new System.Drawing.Point(827, 248);
+            this.auctionButton.Location = new System.Drawing.Point(827, 234);
             this.auctionButton.Name = "auctionButton";
-            this.auctionButton.Size = new System.Drawing.Size(88, 22);
+            this.auctionButton.Size = new System.Drawing.Size(98, 22);
             this.auctionButton.TabIndex = 17;
             this.auctionButton.Text = "Go to Auction";
             this.auctionButton.UseVisualStyleBackColor = true;
@@ -175,19 +176,30 @@
             // 
             // clear_button
             // 
-            this.clear_button.Location = new System.Drawing.Point(827, 306);
+            this.clear_button.Location = new System.Drawing.Point(827, 328);
             this.clear_button.Name = "clear_button";
-            this.clear_button.Size = new System.Drawing.Size(88, 22);
+            this.clear_button.Size = new System.Drawing.Size(98, 22);
             this.clear_button.TabIndex = 69;
             this.clear_button.Text = "Clear";
             this.clear_button.UseVisualStyleBackColor = true;
             this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
+            // 
+            // descriptionBttn
+            // 
+            this.descriptionBttn.Location = new System.Drawing.Point(827, 284);
+            this.descriptionBttn.Name = "descriptionBttn";
+            this.descriptionBttn.Size = new System.Drawing.Size(98, 22);
+            this.descriptionBttn.TabIndex = 75;
+            this.descriptionBttn.Text = "Read Description";
+            this.descriptionBttn.UseVisualStyleBackColor = true;
+            this.descriptionBttn.Click += new System.EventHandler(this.descriptionBttn_Click);
             // 
             // Product_Buyer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 362);
+            this.Controls.Add(this.descriptionBttn);
             this.Controls.Add(this.clear_button);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.allCategories);
@@ -224,5 +236,6 @@
         private System.Windows.Forms.ColumnHeader colSeller;
         private System.Windows.Forms.ColumnHeader sellerRating;
         private System.Windows.Forms.Button clear_button;
+        private System.Windows.Forms.Button descriptionBttn;
     }
 }

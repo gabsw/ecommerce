@@ -73,6 +73,12 @@
     <Compile Include="Create_New_Shipping.Designer.cs">
       <DependentUpon>Create_New_Shipping.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fill_Official_Arrival_Date.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fill_Official_Arrival_Date.Designer.cs">
+      <DependentUpon>Fill_Official_Arrival_Date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ongoing_Shipping.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,9 @@
     <EmbeddedResource Include="Create_New_Shipping.resx">
       <DependentUpon>Create_New_Shipping.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fill_Official_Arrival_Date.resx">
+      <DependentUpon>Fill_Official_Arrival_Date.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ongoing_Shipping.resx">
       <DependentUpon>Ongoing_Shipping.cs</DependentUpon>
     </EmbeddedResource>
@@ -502,7 +511,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\ecommerce - v2\v15\" />
-    <Folder Include="Shipping\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

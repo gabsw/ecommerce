@@ -342,5 +342,66 @@ namespace ecommerce
 
             return true;
         }
+
+        public static bool validateShipping(int purchaseID, String delivery_company, String seller_address, 
+            String buyer_address, DateTime dispatchDate, DateTime estimatedArrivalDate)
+        {
+
+            if (purchaseID.ToString() == "")
+            {
+                showError("PurchaseID cannot be empty.");
+                return false;
+            }
+
+            if (delivery_company == "")
+            {
+                showError("Delivery company cannot be empty.");
+                return false;
+            }
+
+            if (delivery_company.Length > 20)
+            {
+                showError("Delivery company have a name longer than 20 characters.");
+                return false;
+            }
+
+            if (dispatchDate < DateTime.Now)
+            {
+                showError("The dispatch date must start in the future time..");
+                return false;
+            }
+
+            if (estimatedArrivalDate < dispatchDate)
+            {
+                showError("The arrival date should be later than the dispatch date.");
+                return false;
+            }
+
+            if (buyer_address == "")
+            {
+                showError("Buyer's address cannot be empty.");
+                return false;
+            }
+
+            if (buyer_address.Length > 200)
+            {
+                showError("Buyer's name cannot exceed 200 digits.");
+                return false;
+            }
+
+            if (seller_address == "")
+            {
+                showError("Buyer's address cannot be empty.");
+                return false;
+            }
+
+            if (seller_address.Length > 200)
+            {
+                showError("Buyer's name cannot exceed 200 digits.");
+                return false;
+            }
+
+            return true;
+        }
     }
 }

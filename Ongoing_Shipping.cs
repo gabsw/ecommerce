@@ -273,6 +273,29 @@ namespace ecommerce
             populateListView();
             this.Refresh();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (shippingONLV.SelectedItems.Count == 1)
+            {
+                ListViewItem item = shippingONLV.SelectedItems[0];
+
+                int shippingCode = Convert.ToInt32(item.SubItems[0].Text);
+
+                Fill_Official_Arrival_Date f = new Fill_Official_Arrival_Date(shippingCode);
+                f.Show();
+            }
+            else
+            {
+                MessageBox.Show("You need to choose a shipping to complete.", "Error alert",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            shippingONLV.Items.Clear();
+            populateListView();
+            this.Refresh();
+        }
     }
+    
     
 }

@@ -108,7 +108,6 @@
             // 
             this.buyerAdBox.Location = new System.Drawing.Point(162, 160);
             this.buyerAdBox.Name = "buyerAdBox";
-            this.buyerAdBox.PasswordChar = '*';
             this.buyerAdBox.Size = new System.Drawing.Size(223, 20);
             this.buyerAdBox.TabIndex = 39;
             // 
@@ -234,7 +233,6 @@
             // 
             this.sellerAdBox.Location = new System.Drawing.Point(561, 160);
             this.sellerAdBox.Name = "sellerAdBox";
-            this.sellerAdBox.PasswordChar = '*';
             this.sellerAdBox.Size = new System.Drawing.Size(223, 20);
             this.sellerAdBox.TabIndex = 137;
             // 
@@ -273,6 +271,7 @@
             this.dispatch_date_dtp.Name = "dispatch_date_dtp";
             this.dispatch_date_dtp.Size = new System.Drawing.Size(142, 20);
             this.dispatch_date_dtp.TabIndex = 148;
+            this.dispatch_date_dtp.ValueChanged += new System.EventHandler(this.dispatch_date_dtp_ValueChanged);
             // 
             // label11
             // 
@@ -325,6 +324,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Create_New_Shipping";
             this.Text = "Create New Shipping";
+            this.Load += new System.EventHandler(this.Create_New_Shipping_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

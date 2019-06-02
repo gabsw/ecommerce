@@ -19,6 +19,8 @@ namespace ecommerce
         private void InternalOperation_Load(object sender, EventArgs e)
         {
             InternalOperationLV.Items.Clear();
+            commission_lbl.Text = getTotalCommission().ToString("F"); 
+            labelTotalVAT.Text = getCollectedVAT().ToString("F");
             populateListView();
         }
 
@@ -30,6 +32,8 @@ namespace ecommerce
          private void RefreshButton_Click(object sender, EventArgs e)
          {
             InternalOperationLV.Items.Clear();
+            getCollectedVAT();
+            getTotalCommission();
             populateListView();
             this.Refresh();
          }
@@ -46,23 +50,18 @@ namespace ecommerce
                     SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.INTERNAL_OPERATION", con);
 
                     SqlDataReader rd1 = cm1.ExecuteReader();
-                    float total = 0F;
                     
                     while (rd1.Read())
                     {
                         ListViewItem item = new ListViewItem(rd1["operationID"].ToString());
                         item.SubItems.Add(rd1["commission"].ToString());
                         item.SubItems.Add(rd1["collectedVAT"].ToString());
-                        item.SubItems.Add(rd1["date"].ToString());
                         item.SubItems.Add(rd1["paymentCode"].ToString());
-
-                        total += float.Parse(rd1["collectedVAT"].ToString());
+                        item.SubItems.Add(rd1["date"].ToString());
 
                         InternalOperationLV.Items.Add(item);
 
                     }
-                    labelTotalRows.Text = InternalOperationLV.Items.Count.ToString();
-                    labelTotalVAT.Text = total.ToString();
                 }
             }
             catch (Exception ex)
@@ -75,6 +74,52 @@ namespace ecommerce
             }
         }
 
-        
+        private decimal getCollectedVAT()
+        {
+            SqlConnection con = DbConnectionFactory.newConnection();
+
+            try
+            {
+                con.Open();
+
+                SqlCommand cm1 = new SqlCommand("SELECT SUM(collectedVAT) FROM ecommerce.INTERNAL_OPERATION", con);
+                return (decimal)cm1.ExecuteScalar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
+                return -9999999;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private decimal getTotalCommission()
+        {
+            SqlConnection con = DbConnectionFactory.newConnection();
+
+            try
+            {
+                con.Open();
+
+                SqlCommand cm1 = new SqlCommand("SELECT SUM(commission) FROM ecommerce.INTERNAL_OPERATION", con);
+                return (decimal)cm1.ExecuteScalar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
+                return -9999999;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
     }
 }

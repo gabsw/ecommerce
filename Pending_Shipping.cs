@@ -213,7 +213,9 @@ namespace ecommerce
 
                 int purchaseID = Convert.ToInt32(item.SubItems[0].Text);
 
-                Create_New_Shipping f = new Create_New_Shipping(purchaseID);
+                bool hasExpressDelivery = getDeliveryType(purchaseID);
+
+                Create_New_Shipping f = new Create_New_Shipping(purchaseID, hasExpressDelivery);
                 f.Show();
             }
             else
@@ -226,6 +228,35 @@ namespace ecommerce
             populateListView();
             this.Refresh();
         }
-        
+
+        private bool getDeliveryType(int purchaseID)
+        {
+            SqlConnection con = DbConnectionFactory.newConnection();
+
+            try
+            {
+                con.Open();
+                SqlCommand cm1 = new SqlCommand("SELECT hasExpressDelivery " +
+                    "FROM ecommerce.VIEW_PENDING_SHIPPING " +
+                    "WHERE purchaseID = @purchaseID", con);
+                cm1.Parameters.Add("@purchaseID", SqlDbType.Int).Value = purchaseID;
+
+                SqlDataReader rd1 = cm1.ExecuteReader();
+                rd1.Read();
+
+                return (bool)rd1["hasExpressDelivery"];
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
     }
 }

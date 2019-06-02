@@ -221,5 +221,15 @@ namespace ecommerce
             f.MdiParent = this;
             f.Show();
         }
+
+        private void ShippingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Shipping f = new Shipping();
+            f.MdiParent = this;
+            f.Show();
+        }
+
     }
 }

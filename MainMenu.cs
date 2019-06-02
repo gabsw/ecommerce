@@ -223,16 +223,25 @@ namespace ecommerce
             f.Show();
         }
 
+<<<<<<< HEAD
         private void completedToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
 
             Completed_Purchase f = new Completed_Purchase();
 
+=======
+        private void ShippingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Shipping f = new Shipping();
+>>>>>>> duarte_branch
             f.MdiParent = this;
             f.Show();
         }
 
+<<<<<<< HEAD
         private void pendingToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
@@ -242,5 +251,7 @@ namespace ecommerce
             f.MdiParent = this;
             f.Show();
         }
+=======
+>>>>>>> duarte_branch
     }
 }

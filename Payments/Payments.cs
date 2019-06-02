@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,30 +17,77 @@ namespace ecommerce
             InitializeComponent();
         }
 
-        private void TabProcessed_Click(object sender, EventArgs e)
+        private void Payment_Load(object sender, EventArgs e)
         {
-
+            pendingPaymentsLV.Items.Clear();
+            populateListView();
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        
 
-
-        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void TabControl_SelectionChanged(object sender, EventArgs e) { 
+            int current = (sender as TabControl).SelectedIndex;
+            
+            if (current==0)
+                payButton.Enabled = true;
+            else
+                payButton.Enabled = false;
 
         }
 
-       /* private void PayButton_Click(object sender, EventArgs e)
+        private void populateListView()
         {
-            this.IsMdiContainer = true;
+            SqlConnection con = DbConnectionFactory.newConnection();
 
-            PayPayment f = new PayPayment();
+            try
+            {
+                con.Open();
+                if (con.State == ConnectionState.Open)
+                {
+                    SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.INTERNAL_OPERATION", con);
 
-            f.MdiParent = this;
-            f.Show();
-        }*/
+                    SqlDataReader rd1 = cm1.ExecuteReader();
+                    float total = 0F;
+
+                    while (rd1.Read())
+                    {
+                        ListViewItem item = new ListViewItem(rd1["operationID"].ToString());
+                        item.SubItems.Add(rd1["commission"].ToString());
+                        item.SubItems.Add(rd1["collectedVAT"].ToString());
+                        item.SubItems.Add(rd1["date"].ToString());
+                        item.SubItems.Add(rd1["paymentCode"].ToString());
+
+                        total += float.Parse(rd1["collectedVAT"].ToString());
+
+                        pendingPaymentsLV.Items.Add(item);
+
+                    }
+                    labelTotalPayments.Text = pendingPaymentsLV.Items.Count.ToString();
+                    labelAmount.Text = total.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        /* private void PayButton_Click(object sender, EventArgs e)
+         {
+             this.IsMdiContainer = true;
+
+             PayPayment f = new PayPayment();
+
+             f.MdiParent = this;
+             f.Show();
+         }*/
     }
 }

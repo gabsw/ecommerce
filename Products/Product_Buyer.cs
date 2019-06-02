@@ -54,7 +54,7 @@ namespace ecommerce
                     String seller_username = rd1["username_Seller"].ToString();
                     item.SubItems.Add(seller_username);
 
-                    String seller_rating = rd1["rating_Seller"].ToString();
+                    String seller_rating = rd1["avgRating"].ToString();
 
                     if (sellerHasReviews(seller_username))
                     {

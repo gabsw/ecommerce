@@ -71,10 +71,9 @@ namespace ecommerce
                 cm2.Parameters.AddWithValue("@purchaseID", purchaseID);
                 cm2.Parameters.AddWithValue("@Comment", CommentBox.Text);
                 cm2.Parameters.AddWithValue("@Rating", rating);
-                cm2.Parameters.AddWithValue("@userName_Seller", seller);
                 cm2.ExecuteNonQuery();
 
-                MessageBox.Show("You have added a new product!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You have added a new review!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

@@ -56,6 +56,9 @@
             this.completedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shippingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.completedToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ongoingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendingToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,14 +186,14 @@
             // closedToolStripMenuItem
             // 
             this.closedToolStripMenuItem.Name = "closedToolStripMenuItem";
-            this.closedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closedToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.closedToolStripMenuItem.Text = "Closed";
             this.closedToolStripMenuItem.Click += new System.EventHandler(this.closedToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -213,14 +216,14 @@
             // buyerToolStripMenuItem
             // 
             this.buyerToolStripMenuItem.Name = "buyerToolStripMenuItem";
-            this.buyerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buyerToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.buyerToolStripMenuItem.Text = "Buyer";
             this.buyerToolStripMenuItem.Click += new System.EventHandler(this.buyerToolStripMenuItem_Click);
             // 
             // sellerToolStripMenuItem
             // 
             this.sellerToolStripMenuItem.Name = "sellerToolStripMenuItem";
-            this.sellerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sellerToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.sellerToolStripMenuItem.Text = "Seller";
             this.sellerToolStripMenuItem.Click += new System.EventHandler(this.sellerToolStripMenuItem_Click);
             // 
@@ -243,14 +246,14 @@
             // completedToolStripMenuItem1
             // 
             this.completedToolStripMenuItem1.Name = "completedToolStripMenuItem1";
-            this.completedToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.completedToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.completedToolStripMenuItem1.Text = "Completed";
             this.completedToolStripMenuItem1.Click += new System.EventHandler(this.completedToolStripMenuItem1_Click);
             // 
             // pendingToolStripMenuItem1
             // 
             this.pendingToolStripMenuItem1.Name = "pendingToolStripMenuItem1";
-            this.pendingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pendingToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.pendingToolStripMenuItem1.Text = "Pending";
             this.pendingToolStripMenuItem1.Click += new System.EventHandler(this.pendingToolStripMenuItem1_Click);
             // 
@@ -279,9 +282,34 @@
             // 
             // shippingToolStripMenuItem
             // 
+            this.shippingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.completedToolStripMenuItem2,
+            this.ongoingToolStripMenuItem,
+            this.pendingToolStripMenuItem2});
             this.shippingToolStripMenuItem.Name = "shippingToolStripMenuItem";
             this.shippingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shippingToolStripMenuItem.Text = "Shipping";
+            // 
+            // completedToolStripMenuItem2
+            // 
+            this.completedToolStripMenuItem2.Name = "completedToolStripMenuItem2";
+            this.completedToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.completedToolStripMenuItem2.Text = "Completed";
+            this.completedToolStripMenuItem2.Click += new System.EventHandler(this.completedToolStripMenuItem2_Click);
+            // 
+            // ongoingToolStripMenuItem
+            // 
+            this.ongoingToolStripMenuItem.Name = "ongoingToolStripMenuItem";
+            this.ongoingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ongoingToolStripMenuItem.Text = "Ongoing";
+            this.ongoingToolStripMenuItem.Click += new System.EventHandler(this.ongoingToolStripMenuItem_Click);
+            // 
+            // pendingToolStripMenuItem2
+            // 
+            this.pendingToolStripMenuItem2.Name = "pendingToolStripMenuItem2";
+            this.pendingToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.pendingToolStripMenuItem2.Text = "Pending";
+            this.pendingToolStripMenuItem2.Click += new System.EventHandler(this.pendingToolStripMenuItem2_Click);
             // 
             // MainMenu
             // 
@@ -330,6 +358,9 @@
         private System.Windows.Forms.ToolStripMenuItem pendingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem completedToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pendingToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem completedToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ongoingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pendingToolStripMenuItem2;
     }
 }
 

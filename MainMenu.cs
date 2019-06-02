@@ -242,5 +242,35 @@ namespace ecommerce
             f.MdiParent = this;
             f.Show();
         }
+
+        private void completedToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Completed_Shipping f = new Completed_Shipping();
+
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ongoingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Ongoing_Shipping f = new Ongoing_Shipping();
+
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void pendingToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Pending_Shipping f = new Pending_Shipping();
+
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

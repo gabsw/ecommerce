@@ -61,6 +61,30 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Completed_Shipping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Completed_Shipping.Designer.cs">
+      <DependentUpon>Completed_Shipping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create_New_Shipping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create_New_Shipping.Designer.cs">
+      <DependentUpon>Create_New_Shipping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ongoing_Shipping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ongoing_Shipping.Designer.cs">
+      <DependentUpon>Ongoing_Shipping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pending_Shipping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pending_Shipping.Designer.cs">
+      <DependentUpon>Pending_Shipping.cs</DependentUpon>
+    </Compile>
     <Compile Include="Products\ReadFullDescription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +132,12 @@
     </Compile>
     <Compile Include="Purchase\Purchase_Details.Designer.cs">
       <DependentUpon>Purchase_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Read_Shipping_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Read_Shipping_Details.Designer.cs">
+      <DependentUpon>Read_Shipping_Details.cs</DependentUpon>
     </Compile>
     <Compile Include="Reviews\AddNewReview.cs">
       <SubType>Form</SubType>
@@ -276,16 +306,16 @@
     <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="Properties\Settings.Designer.cs" />
     <Compile Include="Unused - obj_tables\RegularUser.cs" />
-    <Compile Include="RU_Profiles\AddNewRUser.cs">
+    <Compile Include="Regular_User_Profiles\AddNewRUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RU_Profiles\AddNewRUser.Designer.cs">
+    <Compile Include="Regular_User_Profiles\AddNewRUser.Designer.cs">
       <DependentUpon>AddNewRUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="RU_Profiles\RU_Profiles.cs">
+    <Compile Include="Regular_User_Profiles\RU_Profiles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RU_Profiles\RU_Profiles.Designer.cs">
+    <Compile Include="Regular_User_Profiles\RU_Profiles.Designer.cs">
       <DependentUpon>RU_Profiles.cs</DependentUpon>
     </Compile>
     <Compile Include="Stats\RU_Stats.cs">
@@ -294,10 +324,10 @@
     <Compile Include="Stats\RU_Stats.Designer.cs">
       <DependentUpon>RU_Stats.cs</DependentUpon>
     </Compile>
-    <Compile Include="RU_Profiles\UpdateRUser.cs">
+    <Compile Include="Regular_User_Profiles\UpdateRUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RU_Profiles\UpdateRUser.Designer.cs">
+    <Compile Include="Regular_User_Profiles\UpdateRUser.Designer.cs">
       <DependentUpon>UpdateRUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Category\UpdateCat.cs">
@@ -331,6 +361,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Account\NewDebit.resx">
       <DependentUpon>NewDebit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Completed_Shipping.resx">
+      <DependentUpon>Completed_Shipping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create_New_Shipping.resx">
+      <DependentUpon>Create_New_Shipping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ongoing_Shipping.resx">
+      <DependentUpon>Ongoing_Shipping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pending_Shipping.resx">
+      <DependentUpon>Pending_Shipping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products\ReadFullDescription.resx">
       <DependentUpon>ReadFullDescription.cs</DependentUpon>
@@ -423,16 +465,16 @@
       <DependentUpon>Product_Seller.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx" />
-    <EmbeddedResource Include="RU_Profiles\AddNewRUser.resx">
+    <EmbeddedResource Include="Regular_User_Profiles\AddNewRUser.resx">
       <DependentUpon>AddNewRUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RU_Profiles\RU_Profiles.resx">
+    <EmbeddedResource Include="Regular_User_Profiles\RU_Profiles.resx">
       <DependentUpon>RU_Profiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stats\RU_Stats.resx">
       <DependentUpon>RU_Stats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RU_Profiles\UpdateRUser.resx">
+    <EmbeddedResource Include="Regular_User_Profiles\UpdateRUser.resx">
       <DependentUpon>UpdateRUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Category\UpdateCat.resx">
@@ -451,6 +493,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\ecommerce - v2\v15\" />
+    <Folder Include="Shipping\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

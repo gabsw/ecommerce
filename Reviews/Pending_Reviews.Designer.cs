@@ -61,6 +61,7 @@
             this.purchaseBox.Name = "purchaseBox";
             this.purchaseBox.Size = new System.Drawing.Size(186, 21);
             this.purchaseBox.TabIndex = 82;
+            this.purchaseBox.SelectedIndexChanged += new System.EventHandler(this.purchaseBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -78,6 +79,7 @@
             this.buyerBox.Name = "buyerBox";
             this.buyerBox.Size = new System.Drawing.Size(186, 21);
             this.buyerBox.TabIndex = 80;
+            this.buyerBox.SelectedIndexChanged += new System.EventHandler(this.buyerBox_SelectedIndexChanged);
             // 
             // reviewsLV
             // 
@@ -145,9 +147,9 @@
             // 
             this.addButton.Location = new System.Drawing.Point(50, 276);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(72, 25);
+            this.addButton.Size = new System.Drawing.Size(89, 25);
             this.addButton.TabIndex = 86;
-            this.addButton.Text = "Add New";
+            this.addButton.Text = "Write Review";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click_1);
             // 
@@ -167,6 +169,7 @@
             this.sellerBox.Name = "sellerBox";
             this.sellerBox.Size = new System.Drawing.Size(186, 21);
             this.sellerBox.TabIndex = 89;
+            this.sellerBox.SelectedIndexChanged += new System.EventHandler(this.sellerBox_SelectedIndexChanged);
             // 
             // label4
             // 

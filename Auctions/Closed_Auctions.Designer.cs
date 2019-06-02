@@ -109,10 +109,10 @@
             this.ClosedAuctionLV.FullRowSelect = true;
             this.ClosedAuctionLV.GridLines = true;
             this.ClosedAuctionLV.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.ClosedAuctionLV.Location = new System.Drawing.Point(149, 25);
+            this.ClosedAuctionLV.Location = new System.Drawing.Point(60, 36);
             this.ClosedAuctionLV.MultiSelect = false;
             this.ClosedAuctionLV.Name = "ClosedAuctionLV";
-            this.ClosedAuctionLV.Size = new System.Drawing.Size(602, 169);
+            this.ClosedAuctionLV.Size = new System.Drawing.Size(721, 169);
             this.ClosedAuctionLV.TabIndex = 83;
             this.ClosedAuctionLV.UseCompatibleStateImageBehavior = false;
             this.ClosedAuctionLV.View = System.Windows.Forms.View.Details;
@@ -144,13 +144,13 @@
             // 
             this.beginningDate.Text = "Beginning Date";
             this.beginningDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.beginningDate.Width = 101;
+            this.beginningDate.Width = 158;
             // 
             // finishDate
             // 
             this.finishDate.Text = "Finish Date";
             this.finishDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.finishDate.Width = 130;
+            this.finishDate.Width = 180;
             // 
             // bidHistory
             // 

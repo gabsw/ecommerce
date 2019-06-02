@@ -94,7 +94,7 @@ namespace ecommerce
                 SqlCommand cm1 = new SqlCommand("SELECT auctionID, Product_Code, userName_Winner, " +
                                                 "winningAmount, BeginningDate, FinishDate " +
                                                 "FROM ecommerce.VIEW_AUCTION_DETAILS AS AD " +
-                                                "JOIN ecommerce.VIEW_WINNING_BID AS WN " +
+                                                "LEFT OUTER JOIN ecommerce.VIEW_WINNING_BID AS WN " +
                                                 "ON AD.auctionID = WN.auction_ID " +
                                                 "WHERE Status = 0 " +
                                                 "AND Product_Code LIKE @Product_Code " +

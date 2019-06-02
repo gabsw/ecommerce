@@ -282,12 +282,14 @@
             this.completedToolStripMenuItem1.Name = "completedToolStripMenuItem1";
             this.completedToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.completedToolStripMenuItem1.Text = "Completed";
+            this.completedToolStripMenuItem1.Click += new System.EventHandler(this.completedToolStripMenuItem1_Click);
             // 
             // pendingToolStripMenuItem1
             // 
             this.pendingToolStripMenuItem1.Name = "pendingToolStripMenuItem1";
             this.pendingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.pendingToolStripMenuItem1.Text = "Pending";
+            this.pendingToolStripMenuItem1.Click += new System.EventHandler(this.pendingToolStripMenuItem1_Click);
             // 
             // MainMenu
             // 

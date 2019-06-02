@@ -61,6 +61,18 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Purchase\Completed_Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Completed_Purchase.Designer.cs">
+      <DependentUpon>Completed_Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\Fill_Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Fill_Purchase.Designer.cs">
+      <DependentUpon>Fill_Purchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Internal Operation\InternalOperation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,18 @@
     </Compile>
     <Compile Include="Payments\PayPayment.Designer.cs">
       <DependentUpon>PayPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\Pending_Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Pending_Purchase.Designer.cs">
+      <DependentUpon>Pending_Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\Purchase_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Purchase_Details.Designer.cs">
+      <DependentUpon>Purchase_Details.cs</DependentUpon>
     </Compile>
     <Compile Include="Reviews\AddNewReview.cs">
       <SubType>Form</SubType>
@@ -302,6 +326,12 @@
     <EmbeddedResource Include="Account\NewDebit.resx">
       <DependentUpon>NewDebit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Completed_Purchase.resx">
+      <DependentUpon>Completed_Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Fill_Purchase.resx">
+      <DependentUpon>Fill_Purchase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Internal Operation\InternalOperation.resx">
       <DependentUpon>InternalOperation.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +340,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Payments\PayPayment.resx">
       <DependentUpon>PayPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Pending_Purchase.resx">
+      <DependentUpon>Pending_Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Purchase_Details.resx">
+      <DependentUpon>Purchase_Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reviews\AddNewReview.resx">
       <DependentUpon>AddNewReview.cs</DependentUpon>
@@ -406,7 +442,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\ecommerce - v2\v15\" />
-    <Folder Include="Purchase\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

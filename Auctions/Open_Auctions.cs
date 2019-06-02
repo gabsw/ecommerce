@@ -203,7 +203,7 @@ namespace ecommerce
                                "ON mvb.auctionID = ad.auctionID " +
                                "LEFT OUTER JOIN ecommerce.VIEW_WINNING_BID AS wb " +
                                "ON ad.auctionID = wb.auction_ID " +
-                               "WHERE Product_Code LIKE @Product_Code " + order;
+                               "WHERE ad.Status = 1 AND Product_Code LIKE @Product_Code " + order;
 
                 SqlCommand cm1 = new SqlCommand(query, con);
 

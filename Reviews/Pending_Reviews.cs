@@ -44,61 +44,6 @@ namespace ecommerce
             }
         }
 
-        private String getSeller(int purchaseID)
-        {
-
-            SqlConnection con = DbConnectionFactory.newConnection();
-
-            try
-            {
-                con.Open();
-
-                SqlCommand cm1 = new SqlCommand("SELECT Seller_Username FROM " +
-                        "ecommerce.VIEW_REVIEW_DETAILS WHERE Purchase_Completed = @purchaseID", con);
-                cm1.Parameters.Add("@purchaseID", SqlDbType.Int).Value = purchaseID;
-                SqlDataReader rd1 = cm1.ExecuteReader();
-                rd1.Read();
-                return rd1["Seller_Username"].ToString();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
-                return "";
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
-        private String getBuyer(int purchaseID)
-        {
-
-            SqlConnection con = DbConnectionFactory.newConnection();
-
-            try
-            {
-                con.Open();
-
-                SqlCommand cm1 = new SqlCommand("SELECT Buyer_Username FROM " +
-                        "ecommerce.VIEW_REVIEW_DETAILS WHERE Purchase_Completed = @purchaseID", con);
-                cm1.Parameters.Add("@purchaseID", SqlDbType.Int).Value = purchaseID;
-                SqlDataReader rd1 = cm1.ExecuteReader();
-                rd1.Read();
-                return rd1["Buyer_Username"].ToString();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
-                return "";
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
 
         private void addButton_Click_1(object sender, EventArgs e)
         {
@@ -267,6 +212,27 @@ namespace ecommerce
             populateBuyerBox();
             populatePurchaseWithoutReviewsBox();
             populateListView();
+        }
+
+        private void sellerBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            reviewsLV.Items.Clear();
+            populateListView();
+            this.Refresh();
+        }
+
+        private void buyerBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            reviewsLV.Items.Clear();
+            populateListView();
+            this.Refresh();
+        }
+
+        private void purchaseBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            reviewsLV.Items.Clear();
+            populateListView();
+            this.Refresh();
         }
     }
 }

@@ -266,5 +266,81 @@ namespace ecommerce
 
             return true;
         }
+
+        public static bool validatePurchase(decimal finalPrice, decimal VAT_Record, bool hasExpressDelivery,
+                int auctionID, String Buyer_Name_Record, String Buyer_TIN_Record, String Seller_Name_Record, 
+                String Seller_TIN_Record)
+        {
+         
+            if (auctionID.ToString() == "")
+            {
+                showError("AuctionID cannot be empty.");
+                return false;
+            }
+
+            if (finalPrice.ToString() == "")
+            {
+                showError("Final Price cannot be empty.");
+                return false;
+            }
+
+            if (finalPrice < 0)
+            {
+                showError("Final Price cannot be negative.");
+                return false;
+            }
+
+            if (hasExpressDelivery.ToString() == "")
+            {
+                showError("Delivery type cannot be empty.");
+                return false;
+            }
+
+            if (VAT_Record < 0 )
+            {
+                showError("VAT cannot be negative.");
+                return false;
+            }
+
+            if (Buyer_Name_Record == "")
+            {
+                showError("Buyer's name cannot be empty.");
+                return false;
+            }
+
+            if (Buyer_Name_Record.Length > 50)
+            {
+                showError("Buyer's name cannot exceed 50 digits. Use initials.");
+                return false;
+            }
+
+            if (Buyer_TIN_Record.Length > 11 || Buyer_TIN_Record == "")
+            {
+                showError("Please enter a valid TIN for the buyer.");
+                return false;
+            }
+
+            if (Seller_Name_Record == "")
+            {
+                showError("Seller's name cannot be empty.");
+                return false;
+            }
+
+            if (Seller_Name_Record.Length > 50)
+            {
+                showError("Seller's name cannot exceed 50 digits. Use initials.");
+                return false;
+            }
+
+            if (Seller_TIN_Record.Length > 11 || Seller_TIN_Record == "")
+            {
+                showError("Please enter a valid TIN for the seller.");
+                return false;
+            }
+
+
+
+            return true;
+        }
     }
 }

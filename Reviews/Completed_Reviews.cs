@@ -210,62 +210,6 @@ namespace ecommerce
             }
         }
 
-        private String getSeller(int purchaseID)
-        {
-
-            SqlConnection con = DbConnectionFactory.newConnection();
-
-            try
-            {
-                con.Open();
-
-                SqlCommand cm1 = new SqlCommand("SELECT Seller_Username FROM " +
-                        "ecommerce.VIEW_REVIEW_DETAILS WHERE Purchase_Completed = @purchaseID", con);
-                cm1.Parameters.Add("@purchaseID", SqlDbType.Int).Value = purchaseID;
-                SqlDataReader rd1 = cm1.ExecuteReader();
-                rd1.Read();
-                return rd1["Seller_Username"].ToString();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
-                return "";
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
-        private String getBuyer(int purchaseID)
-        {
-
-            SqlConnection con = DbConnectionFactory.newConnection();
-
-            try
-            {
-                con.Open();
-
-                SqlCommand cm1 = new SqlCommand("SELECT Buyer_Username FROM " +
-                        "ecommerce.VIEW_REVIEW_DETAILS WHERE Purchase_Completed = @purchaseID", con);
-                cm1.Parameters.Add("@purchaseID", SqlDbType.Int).Value = purchaseID;
-                SqlDataReader rd1 = cm1.ExecuteReader();
-                rd1.Read();
-                return rd1["Buyer_Username"].ToString();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
-                return "";
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
         private void OpenReview_Click(object sender, EventArgs e)
         {
             if (reviewsLV.SelectedItems.Count == 1)
@@ -287,7 +231,7 @@ namespace ecommerce
             }
             else
             {
-                MessageBox.Show("You need to choose an user from the list to update.", "Error alert",
+                MessageBox.Show("You need to choose a review to open.", "Error alert",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 

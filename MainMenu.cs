@@ -13,11 +13,11 @@ namespace ecommerce
         public MainMenu()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
 
-            // Corrigir SP
-            //ThreadStart childref = new ThreadStart(closeAuctions);
-            //Thread childThread = new Thread(childref);
-            //childThread.Start();
+            ThreadStart childref = new ThreadStart(closeAuctions);
+            Thread childThread = new Thread(childref);
+            childThread.Start();
         }
 
         private static void closeAuctions()

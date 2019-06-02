@@ -46,7 +46,8 @@ namespace ecommerce
                     SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.INTERNAL_OPERATION", con);
 
                     SqlDataReader rd1 = cm1.ExecuteReader();
-                    float total = 0F;
+                    float totalVAT = 0F;
+                    float totalComission = 0F;
                     
                     while (rd1.Read())
                     {
@@ -56,13 +57,15 @@ namespace ecommerce
                         item.SubItems.Add(rd1["date"].ToString());
                         item.SubItems.Add(rd1["paymentCode"].ToString());
 
-                        total += float.Parse(rd1["collectedVAT"].ToString());
+                        totalVAT += float.Parse(rd1["collectedVAT"].ToString());
+                        totalComission += float.Parse(rd1["commission"].ToString());
 
                         InternalOperationLV.Items.Add(item);
 
                     }
                     labelTotalRows.Text = InternalOperationLV.Items.Count.ToString();
-                    labelTotalVAT.Text = total.ToString();
+                    labelTotalVAT.Text = totalVAT.ToString() + " €";
+                    labelTotalComission.Text = totalComission.ToString() + "  €";
                 }
             }
             catch (Exception ex)
@@ -75,6 +78,5 @@ namespace ecommerce
             }
         }
 
-        
     }
 }

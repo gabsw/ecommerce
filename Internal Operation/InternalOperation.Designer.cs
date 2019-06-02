@@ -30,7 +30,7 @@
         {
             this.InternalOperationLV = new System.Windows.Forms.ListView();
             this.ioID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ioCommission = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ioComission = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ioVATCollected = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ioDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ioPaymentCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,13 +40,15 @@
             this.labelTotalVAT = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTotalRows = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelTotalComission = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // InternalOperationLV
             // 
             this.InternalOperationLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ioID,
-            this.ioCommission,
+            this.ioComission,
             this.ioVATCollected,
             this.ioDate,
             this.ioPaymentCode});
@@ -66,11 +68,11 @@
             this.ioID.Text = "ID";
             this.ioID.Width = 69;
             // 
-            // ioCommission
+            // ioComission
             // 
-            this.ioCommission.Text = "Commission (%)";
-            this.ioCommission.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ioCommission.Width = 130;
+            this.ioComission.Text = "Comission (€)";
+            this.ioComission.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ioComission.Width = 130;
             // 
             // ioVATCollected
             // 
@@ -146,11 +148,31 @@
             this.labelTotalRows.TabIndex = 8;
             this.labelTotalRows.Text = "total";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(280, 398);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(166, 17);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Total Comission Earned: ";
+            // 
+            // labelTotalComission
+            // 
+            this.labelTotalComission.AutoSize = true;
+            this.labelTotalComission.Location = new System.Drawing.Point(525, 398);
+            this.labelTotalComission.Name = "labelTotalComission";
+            this.labelTotalComission.Size = new System.Drawing.Size(35, 17);
+            this.labelTotalComission.TabIndex = 10;
+            this.labelTotalComission.Text = "total";
+            // 
             // InternalOperation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 524);
+            this.Controls.Add(this.labelTotalComission);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.labelTotalRows);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelTotalVAT);
@@ -170,7 +192,7 @@
 
         private System.Windows.Forms.ListView InternalOperationLV;
         private System.Windows.Forms.ColumnHeader ioID;
-        private System.Windows.Forms.ColumnHeader ioCommission;
+        private System.Windows.Forms.ColumnHeader ioComission;
         private System.Windows.Forms.ColumnHeader ioVATCollected;
         private System.Windows.Forms.ColumnHeader ioDate;
         private System.Windows.Forms.ColumnHeader ioPaymentCode;
@@ -180,5 +202,7 @@
         private System.Windows.Forms.Label labelTotalVAT;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTotalRows;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelTotalComission;
     }
 }

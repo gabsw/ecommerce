@@ -360,6 +360,7 @@
     <Compile Include="Products\UpdateProduct.Designer.cs">
       <DependentUpon>UpdateProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Account\Account.resx">

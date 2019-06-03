@@ -46,7 +46,7 @@ namespace ecommerce
 
 
             // Form validation
-            if (!FormValidation.validateAdmin(userName, name, email, password, password_confirmation))
+            if (!FormValidation.validateAdmin(userName, name, email, password, password_confirmation, true))
             {
                 return;
             }

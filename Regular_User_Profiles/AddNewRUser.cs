@@ -44,7 +44,7 @@ namespace ecommerce
             String fullAddress = addressBox.Text;
 
 
-            if (!FormValidation.validateUser(userName, name, email, password, password_confirmation, tin, fullAddress))
+            if (!FormValidation.validateUser(userName, name, email, password, password_confirmation, tin, fullAddress, false))
             {
                 return;
             }

@@ -39,7 +39,7 @@ namespace ecommerce
             String password = passwordBox.Text;
             String password_confirmation = confPWBox.Text;
 
-            if (!FormValidation.validateAdmin(userName, name, email, password, password_confirmation))
+            if (!FormValidation.validateAdmin(userName, name, email, password, password_confirmation, false))
             {
                 return;
             }

@@ -56,7 +56,7 @@ namespace ecommerce
 
 
             // Form validation
-            if (!FormValidation.validateUser(userName, name, email, password, password_confirmation, tin, fullAddress))
+            if (!FormValidation.validateUser(userName, name, email, password, password_confirmation, tin, fullAddress, true))
             {
                 return;
             }
@@ -91,10 +91,17 @@ namespace ecommerce
                 cmd3.Parameters.AddWithValue("@Password", password);
                 cmd3.Parameters.AddWithValue("@Address", fullAddress);
                 cmd3.Parameters.AddWithValue("@TIN", tin);
+                SqlParameter return_value = Utils.dbProcReturnValue(cmd3);
                 cmd3.ExecuteNonQuery();
 
-
-                MessageBox.Show("You have updated a user!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Utils.paramIntValue(return_value) == 0)
+                {
+                    MessageBox.Show("You have updated a user!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update user!", "Failed Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {

@@ -9,7 +9,7 @@ namespace ecommerce
         {
             MessageBox.Show(errorMsg, "Error alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        public static bool validateUser(String userName, String name, String email, String password, String password_confirmation, String tin, String fullAddress)
+        public static bool validateUser(String userName, String name, String email, String password, String password_confirmation, String tin, String fullAddress, bool isUpdate)
         {
             if (userName == "" || userName.Length < 3 || userName.Length > 20)
             {
@@ -17,7 +17,12 @@ namespace ecommerce
                 return false;
             }
 
-            if (password == "" || password.Length < 6 || password.Length > 20)
+            if (!isUpdate && (password == "" || password.Length < 6 || password.Length > 20))
+            {
+                showError("Please enter a password consisting of 6 to 20 characters.");
+                return false;
+            }
+            else if (isUpdate && password != "" && (password.Length < 6 || password.Length > 20))
             {
                 showError("Please enter a password consisting of 6 to 20 characters.");
                 return false;
@@ -86,7 +91,7 @@ namespace ecommerce
         }
 
         public static bool validateAdmin(String userName, String name, String email, String password,
-            String password_confirmation)
+            String password_confirmation, bool isUpdate)
         {
             if (userName == "" || userName.Length < 3 || userName.Length > 20)
             {
@@ -94,7 +99,12 @@ namespace ecommerce
                 return false;
             }
 
-            if (password == "" || password.Length < 6 || password.Length > 20)
+            if (!isUpdate && (password == "" || password.Length < 6 || password.Length > 20))
+            {
+                showError("Please enter a password consisting of 6 to 20 characters.");
+                return false;
+            }
+            else if (isUpdate && password != "" && (password.Length < 6 || password.Length > 20))
             {
                 showError("Please enter a password consisting of 6 to 20 characters.");
                 return false;

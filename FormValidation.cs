@@ -9,8 +9,7 @@ namespace ecommerce
         {
             MessageBox.Show(errorMsg, "Error alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        public static bool validateUser(String userName, String name, String email, String password,
-            String password_confirmation, String tin, String fullAddress)
+        public static bool validateUser(String userName, String name, String email, String password, String password_confirmation, String tin, String fullAddress)
         {
             if (userName == "" || userName.Length < 3 || userName.Length > 20)
             {
@@ -268,10 +267,10 @@ namespace ecommerce
         }
 
         public static bool validatePurchase(decimal finalPrice, decimal VAT_Record, bool hasExpressDelivery,
-                int auctionID, String Buyer_Name_Record, String Buyer_TIN_Record, String Seller_Name_Record, 
+                int auctionID, String Buyer_Name_Record, String Buyer_TIN_Record, String Seller_Name_Record,
                 String Seller_TIN_Record)
         {
-         
+
             if (auctionID.ToString() == "")
             {
                 showError("AuctionID cannot be empty.");
@@ -296,7 +295,7 @@ namespace ecommerce
                 return false;
             }
 
-            if (VAT_Record < 0 )
+            if (VAT_Record < 0)
             {
                 showError("VAT cannot be negative.");
                 return false;
@@ -343,7 +342,7 @@ namespace ecommerce
             return true;
         }
 
-        public static bool validateShipping(int purchaseID, String delivery_company, String seller_address, 
+        public static bool validateShipping(int purchaseID, String delivery_company, String seller_address,
             String buyer_address, DateTime dispatchDate, DateTime estimatedArrivalDate)
         {
 

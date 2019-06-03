@@ -37,8 +37,8 @@ namespace ecommerce
                 String username = item.SubItems[0].Text;
                 String name = item.SubItems[1].Text;
                 String email = item.SubItems[2].Text;
-                String password = item.SubItems[3].Text;
-                String confirm_pw = password;
+                String password = "";
+                String confirm_pw = "";
 
                 UpdateAdmin f2 = new UpdateAdmin(username, name, email, password, confirm_pw);
                 f2.Show();
@@ -76,7 +76,6 @@ namespace ecommerce
                         ListViewItem item = new ListViewItem(rd1["userName"].ToString());
                         item.SubItems.Add(rd1["Name"].ToString());
                         item.SubItems.Add(rd1["Email"].ToString());
-                        item.SubItems.Add(rd1["Password"].ToString());
 
                         AdminListView.Items.Add(item);
 

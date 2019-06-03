@@ -33,8 +33,8 @@ namespace ecommerce
                 String username = item.SubItems[0].Text;
                 String name = item.SubItems[1].Text;
                 String email = item.SubItems[2].Text;
-                String password = getPassword(username);
-                String confirm_pw = password;
+                String password = "";
+                String confirm_pw = "";
                 String TIN = item.SubItems[3].Text;
                 String fullAddress = item.SubItems[4].Text;
 
@@ -101,37 +101,6 @@ namespace ecommerce
             listViewRU.Items.Clear();
             populateListView();
             this.Refresh();
-        }
-
-        private String getPassword(String username)
-        {
-
-            SqlConnection con = DbConnectionFactory.newConnection();
-
-            try
-            {
-                con.Open();
-                if (con.State == ConnectionState.Open)
-                {
-                    SqlCommand cm1 = new SqlCommand("SELECT Password FROM ecommerce.[USER] WHERE userName = @userName", con);
-                    cm1.Parameters.Add("@userName", SqlDbType.VarChar).Value = username;
-                    SqlDataReader rd1 = cm1.ExecuteReader();
-                    rd1.Read();
-                    return rd1["Password"].ToString();
-                    
-                }
-                FormValidation.showError("Password cannot be empty.");
-                return "";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
-                return "";
-            }
-            finally
-            {
-                con.Close();
-            }
         }
     }
 }

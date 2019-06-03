@@ -53,7 +53,7 @@ namespace ecommerce
             String password_confirmation = confPWBox.Text;
             String tin = TINBox.Text;
             String fullAddress = addressBox.Text;
-        
+
 
             // Form validation
             if (!FormValidation.validateUser(userName, name, email, password, password_confirmation, tin, fullAddress))

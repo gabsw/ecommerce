@@ -32,7 +32,6 @@
             this.admin_username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.admin_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.admin_email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.admin_pw = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
@@ -43,8 +42,7 @@
             this.AdminListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.admin_username,
             this.admin_name,
-            this.admin_email,
-            this.admin_pw});
+            this.admin_email});
             this.AdminListView.FullRowSelect = true;
             this.AdminListView.GridLines = true;
             this.AdminListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -65,19 +63,13 @@
             // 
             this.admin_name.Text = "Name";
             this.admin_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.admin_name.Width = 110;
+            this.admin_name.Width = 151;
             // 
             // admin_email
             // 
             this.admin_email.Text = "E-mail";
             this.admin_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.admin_email.Width = 129;
-            // 
-            // admin_pw
-            // 
-            this.admin_pw.Text = "Password";
-            this.admin_pw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.admin_pw.Width = 96;
+            this.admin_email.Width = 181;
             // 
             // addButton
             // 
@@ -130,7 +122,6 @@
         private System.Windows.Forms.ColumnHeader admin_username;
         private System.Windows.Forms.ColumnHeader admin_name;
         private System.Windows.Forms.ColumnHeader admin_email;
-        private System.Windows.Forms.ColumnHeader admin_pw;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button refreshButton;

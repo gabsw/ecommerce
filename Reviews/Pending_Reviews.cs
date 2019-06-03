@@ -24,8 +24,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT Purchase_Completed FROM ecommerce.VIEW_REVIEW_DETAILS " +
-                    "WHERE Purchase_Associated_Review IS NULL", con);
+                SqlCommand cm1 = new SqlCommand("SELECT Purchase_Completed FROM ecommerce.VIEW_PENDING_REVIEWS", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
@@ -113,11 +112,10 @@ namespace ecommerce
             {
                 con.Open();
 
-                SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.VIEW_REVIEW_DETAILS " +
+                SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.VIEW_PENDING_REVIEWS " +
                     "WHERE Seller_Username LIKE @Seller " +
                     "AND Buyer_Username LIKE @Buyer " +
-                    "AND Purchase_Completed LIKE @purchaseID " +
-                    "AND Purchase_Associated_Review IS NULL", con);
+                    "AND Purchase_Completed LIKE @purchaseID", con);
 
 
                 cm1.Parameters.AddWithValue("@Seller", usernameSeller);
@@ -155,8 +153,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Buyer_Username FROM ecommerce.VIEW_REVIEW_DETAILS " +
-                    "WHERE Purchase_Associated_Review IS NULL", con);
+                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Buyer_Username FROM ecommerce.VIEW_PENDING_REVIEWS", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
@@ -182,8 +179,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Seller_Username FROM ecommerce.VIEW_REVIEW_DETAILS " +
-                    "WHERE Purchase_Associated_Review IS NULL", con);
+                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Seller_Username FROM ecommerce.VIEW_PENDING_REVIEWS", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 

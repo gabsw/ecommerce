@@ -74,7 +74,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Seller_Username FROM ecommerce.VIEW_REVIEW_DETAILS", con);
+                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Seller_Username FROM ecommerce.VIEW_COMPLETED_REVIEWS", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
@@ -100,7 +100,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Buyer_Username FROM ecommerce.VIEW_REVIEW_DETAILS", con);
+                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Buyer_Username FROM ecommerce.VIEW_COMPLETED_REVIEWS", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
@@ -127,13 +127,13 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT Purchase_Completed FROM ecommerce.VIEW_REVIEW_DETAILS", con);
+                SqlCommand cm1 = new SqlCommand("SELECT Purchase FROM ecommerce.VIEW_COMPLETED_REVIEWS", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
                 while (rd1.Read())
                 {
-                    purchaseBox.Items.Add(rd1["Purchase_Completed"].ToString());
+                    purchaseBox.Items.Add(rd1["Purchase"].ToString());
                 }
             }
             catch (Exception ex)
@@ -173,10 +173,10 @@ namespace ecommerce
             {
                 con.Open();
 
-                SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.VIEW_REVIEW_DETAILS " +
+                SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.VIEW_COMPLETED_REVIEWS " +
                     "WHERE Seller_Username LIKE @Seller " +
                     "AND Buyer_Username LIKE @Buyer " +
-                    "AND Purchase_Associated_Review LIKE @purchaseID", con);
+                    "AND Purchase LIKE @purchaseID", con);
 
                 cm1.Parameters.AddWithValue("@Seller", usernameSeller);
                 cm1.Parameters.AddWithValue("@Buyer", usernameBuyer);
@@ -188,7 +188,7 @@ namespace ecommerce
                 while (rd1.Read())
                 {
                     ListViewItem item = new ListViewItem(rd1["reviewID"].ToString());
-                    item.SubItems.Add(rd1["Purchase_Associated_Review"].ToString());
+                    item.SubItems.Add(rd1["Purchase"].ToString());
                     item.SubItems.Add(rd1["Product_Code"].ToString());
                     item.SubItems.Add(rd1["Buyer_Username"].ToString());
                     item.SubItems.Add(rd1["Seller_Username"].ToString());

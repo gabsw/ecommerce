@@ -149,17 +149,6 @@ namespace ecommerce
             f.Show();
         }
 
-        // Display new form Stats for Delivery Companies
-        private void deliveryCompaniesToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            this.IsMdiContainer = true;
-
-            Delivery_Stats f = new Delivery_Stats();
-
-            f.MdiParent = this;
-            f.Show();
-        }
-
         // Display new form Stats for Product Categories
         private void productCategoriesToolStripMenuItem1_Click(object sender, EventArgs e)
         {

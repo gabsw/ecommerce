@@ -46,10 +46,10 @@
             this.Cat_ListView.FullRowSelect = true;
             this.Cat_ListView.GridLines = true;
             this.Cat_ListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.Cat_ListView.Location = new System.Drawing.Point(60, 53);
+            this.Cat_ListView.Location = new System.Drawing.Point(123, 41);
             this.Cat_ListView.MultiSelect = false;
             this.Cat_ListView.Name = "Cat_ListView";
-            this.Cat_ListView.Size = new System.Drawing.Size(234, 216);
+            this.Cat_ListView.Size = new System.Drawing.Size(267, 262);
             this.Cat_ListView.TabIndex = 0;
             this.Cat_ListView.UseCompatibleStateImageBehavior = false;
             this.Cat_ListView.View = System.Windows.Forms.View.Details;
@@ -62,7 +62,7 @@
             // 
             this.catName.Text = "Name";
             this.catName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.catName.Width = 98;
+            this.catName.Width = 123;
             // 
             // catVAT
             // 
@@ -72,7 +72,7 @@
             // 
             // AddNewButton
             // 
-            this.AddNewButton.Location = new System.Drawing.Point(60, 308);
+            this.AddNewButton.Location = new System.Drawing.Point(145, 349);
             this.AddNewButton.Name = "AddNewButton";
             this.AddNewButton.Size = new System.Drawing.Size(67, 20);
             this.AddNewButton.TabIndex = 1;
@@ -82,7 +82,7 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(238, 308);
+            this.refreshButton.Location = new System.Drawing.Point(323, 349);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(67, 20);
             this.refreshButton.TabIndex = 3;
@@ -92,7 +92,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(151, 308);
+            this.updateButton.Location = new System.Drawing.Point(236, 349);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(68, 20);
             this.updateButton.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 390);
+            this.ClientSize = new System.Drawing.Size(509, 440);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.AddNewButton);

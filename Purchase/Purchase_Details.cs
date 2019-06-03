@@ -21,7 +21,6 @@ namespace ecommerce
 
         private void Purchase_Details_Load(object sender, EventArgs e)
         {
-            
             String delivery = "";
 
             SqlConnection con = DbConnectionFactory.newConnection();

@@ -145,7 +145,7 @@ namespace ecommerce
                 cmd1.Parameters.AddWithValue("@Buyer_Name_Record", Buyer_Name_Record);
                 cmd1.Parameters.AddWithValue("@Buyer_TIN_Record", Buyer_TIN_Record);
                 cmd1.Parameters.AddWithValue("@Seller_Name_Record", Seller_Name_Record);
-                cmd1.Parameters.AddWithValue("@Seller_TIN_Record", Seller_Name_Record);
+                cmd1.Parameters.AddWithValue("@Seller_TIN_Record", Seller_TIN_Record);
 
 
                 cmd1.ExecuteNonQuery();

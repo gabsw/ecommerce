@@ -10,81 +10,73 @@ using System.Windows.Forms;
 
 namespace ecommerce
 {
-    public partial class Completed_Purchase : Form
+    public partial class Completed_Payment : Form
     {
-        public Completed_Purchase()
+        public Completed_Payment()
         {
             InitializeComponent();
         }
 
-        private void Completed_Purchase_Load(object sender, EventArgs e)
+        private void Completed_Payment_Load(object sender, EventArgs e)
         {
-            sellerBox.Items.Clear();
             buyerBox.Items.Clear();
-            auctionBox.Items.Clear();
-            purchCompLV.Items.Clear();
-            populateSellerBox();
+            purchaseBox.Items.Clear();
+            payBox.Items.Clear();
+            payCompLV.Items.Clear();
             populateBuyerBox();
-            populateAuctionWithPurchasesBox();
+            populatePurchaseWithPayBox();
+            populatePayBox();
             populateListView();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void readButton_Click(object sender, EventArgs e)
         {
-            if (purchCompLV.SelectedItems.Count == 1)
+            if (payCompLV.SelectedItems.Count == 1)
             {
-                ListViewItem item = purchCompLV.SelectedItems[0];
+                ListViewItem item = payCompLV.SelectedItems[0];
 
-                int purchaseID = Convert.ToInt32(item.SubItems[0].Text);
+                int paymentCode = Convert.ToInt32(item.SubItems[0].Text);
 
-                Purchase_Details f = new Purchase_Details(purchaseID);
+                Payment_Details f = new Payment_Details(paymentCode);
                 f.Show();
             }
             else
             {
-                MessageBox.Show("You need to choose a purchase to open.", "Error alert",
+                MessageBox.Show("You need to choose a payment to open.", "Error alert",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            purchCompLV.Items.Clear();
+            payCompLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
 
         private void clear_button_Click(object sender, EventArgs e)
         {
-            sellerBox.Text = "";
             buyerBox.Text = "";
-            auctionBox.Text = "";
-            purchCompLV.Items.Clear();
+            purchaseBox.Text = "";
+            payCompLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
-            purchCompLV.Items.Clear();
-            populateListView();
-            this.Refresh();
-        }
-
-        private void sellerBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            purchCompLV.Items.Clear();
+            payCompLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
 
         private void buyerBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            purchCompLV.Items.Clear();
+            payCompLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
 
-        private void auctionBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void purchaseBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            purchCompLV.Items.Clear();
+            payCompLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
@@ -93,51 +85,50 @@ namespace ecommerce
         {
             SqlConnection con = DbConnectionFactory.newConnection();
 
-            String usernameSeller = sellerBox.Text;
             String usernameBuyer = buyerBox.Text;
-            String auctionID_str = auctionBox.Text;
-
-            if (usernameSeller == "")
-            {
-                usernameSeller = "%";
-            }
+            String purchaseID_str = purchaseBox.Text;
+            String paymentCode_str = payBox.Text;
 
             if (usernameBuyer == "")
             {
                 usernameBuyer = "%";
             }
 
-            if (auctionID_str == "")
+            if (purchaseID_str == "")
             {
-                auctionID_str = "%";
+                purchaseID_str = "%";
+            }
+
+            if (paymentCode_str == "")
+            {
+                paymentCode_str = "%";
             }
 
             try
             {
                 con.Open();
 
-                SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.VIEW_COMPLETED_PURCHASES " +
-                    "WHERE Seller_Username LIKE @Seller " +
-                    "AND Buyer_Username LIKE @Buyer " +
-                    "AND auctionID LIKE @auctionID", con);
+                SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.VIEW_COMPLETED_PAYMENTS " +
+                    "WHERE Buyer_Username LIKE @Buyer " +
+                    "AND payment_code LIKE @payment_code " +
+                    "AND purchaseID LIKE @purchaseID", con);
 
-
-                cm1.Parameters.AddWithValue("@Seller", usernameSeller);
                 cm1.Parameters.AddWithValue("@Buyer", usernameBuyer);
-                cm1.Parameters.AddWithValue("@auctionID", auctionID_str);
+                cm1.Parameters.AddWithValue("@purchaseID", purchaseID_str);
+                cm1.Parameters.AddWithValue("@payment_code", paymentCode_str);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
 
                 while (rd1.Read())
                 {
-                    ListViewItem item = new ListViewItem(rd1["purchaseID"].ToString());
-                    item.SubItems.Add(rd1["auctionID"].ToString());
+                    ListViewItem item = new ListViewItem(rd1["payment_code"].ToString());
+                    item.SubItems.Add(rd1["purchaseID"].ToString());
                     item.SubItems.Add(rd1["Buyer_Username"].ToString());
-                    item.SubItems.Add(rd1["Seller_Username"].ToString());
-                    item.SubItems.Add(rd1["Purchase_Final_Price"].ToString());
+                    item.SubItems.Add(rd1["Amount"].ToString());
+                    item.SubItems.Add(rd1["Payment_Date"].ToString());
 
-                    purchCompLV.Items.Add(item);
+                    payCompLV.Items.Add(item);
                 }
 
             }
@@ -158,7 +149,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Buyer_Username FROM ecommerce.VIEW_COMPLETED_PURCHASES", con);
+                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Buyer_Username FROM ecommerce.VIEW_COMPLETED_PAYMENTS", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
@@ -177,20 +168,20 @@ namespace ecommerce
             }
         }
 
-        private void populateSellerBox()
+        private void populatePurchaseWithPayBox()
         {
             SqlConnection con = DbConnectionFactory.newConnection();
 
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Seller_Username FROM ecommerce.VIEW_COMPLETED_PURCHASES", con);
+                SqlCommand cm1 = new SqlCommand("SELECT purchaseID FROM ecommerce.VIEW_COMPLETED_PAYMENTS", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
                 while (rd1.Read())
                 {
-                    sellerBox.Items.Add(rd1["Seller_Username"].ToString());
+                    purchaseBox.Items.Add(rd1["purchaseID"].ToString());
                 }
             }
             catch (Exception ex)
@@ -203,20 +194,27 @@ namespace ecommerce
             }
         }
 
-        private void populateAuctionWithPurchasesBox()
+        private void payBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            payCompLV.Items.Clear();
+            populateListView();
+            this.Refresh();
+        }
+
+        private void populatePayBox()
         {
             SqlConnection con = DbConnectionFactory.newConnection();
 
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT auctionID FROM ecommerce.VIEW_COMPLETED_PURCHASES", con);
+                SqlCommand cm1 = new SqlCommand("SELECT payment_code FROM ecommerce.VIEW_COMPLETED_PAYMENTS", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
                 while (rd1.Read())
                 {
-                    auctionBox.Items.Add(rd1["auctionID"].ToString());
+                    payBox.Items.Add(rd1["payment_code"].ToString());
                 }
             }
             catch (Exception ex)
@@ -228,6 +226,5 @@ namespace ecommerce
                 con.Close();
             }
         }
-
     }
 }

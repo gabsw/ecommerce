@@ -361,13 +361,13 @@ namespace ecommerce
 
             if (delivery_company.Length > 20)
             {
-                showError("Delivery company have a name longer than 20 characters.");
+                showError("Delivery company cannot have a name longer than 20 characters.");
                 return false;
             }
 
             if (dispatchDate < DateTime.Now)
             {
-                showError("The dispatch date must start in the future time..");
+                showError("The dispatch date must start in the future time.");
                 return false;
             }
 
@@ -385,19 +385,75 @@ namespace ecommerce
 
             if (buyer_address.Length > 200)
             {
-                showError("Buyer's name cannot exceed 200 digits.");
+                showError("Buyer's address cannot exceed 200 digits.");
                 return false;
             }
 
             if (seller_address == "")
             {
-                showError("Buyer's address cannot be empty.");
+                showError("Seller's address cannot be empty.");
                 return false;
             }
 
             if (seller_address.Length > 200)
             {
-                showError("Buyer's name cannot exceed 200 digits.");
+                showError("Seller's address cannot exceed 200 digits.");
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool validatePayment(int purchaseID, decimal amount, String billing_address,
+            String cc_number, String cc_cvc, DateTime cc_expiry_date)
+        {
+
+            if (purchaseID.ToString() == "")
+            {
+                showError("PurchaseID cannot be empty.");
+                return false;
+            }
+
+            if (billing_address == "")
+            {
+                showError("Billing address cannot be empty.");
+                return false;
+            }
+
+            if (billing_address.Length > 200)
+            {
+                showError("Billing address cannot be longer than 200 characters.");
+                return false;
+            }
+
+            if (cc_expiry_date < DateTime.Now)
+            {
+                showError("Your credit card date has expired.");
+                return false;
+            }
+
+
+            if (cc_number == "")
+            {
+                showError("Credit card number cannot be empty.");
+                return false;
+            }
+
+            if (cc_number.Length > 19)
+            {
+                showError("Credit card number is invalid.");
+                return false;
+            }
+
+            if (cc_cvc == "")
+            {
+                showError("Credit card CVC number cannot be empty.");
+                return false;
+            }
+
+            if (cc_cvc.Length != 3)
+            {
+                showError("CVC number is invalid.");
                 return false;
             }
 

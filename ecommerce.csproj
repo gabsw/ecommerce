@@ -61,6 +61,30 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Payments\Completed_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\Completed_Payment.Designer.cs">
+      <DependentUpon>Completed_Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments\Create_New_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\Create_New_Payment.Designer.cs">
+      <DependentUpon>Create_New_Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments\Payment_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\Payment_Details.Designer.cs">
+      <DependentUpon>Payment_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments\Pending_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\Pending_Payment.Designer.cs">
+      <DependentUpon>Pending_Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shipping\Completed_Shipping.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,18 +138,6 @@
     </Compile>
     <Compile Include="Internal Operation\InternalOperation.Designer.cs">
       <DependentUpon>InternalOperation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Payments\Payments.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Payments\Payments.Designer.cs">
-      <DependentUpon>Payments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Payments\PayPayment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Payments\PayPayment.Designer.cs">
-      <DependentUpon>PayPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="Purchase\Pending_Purchase.cs">
       <SubType>Form</SubType>
@@ -368,6 +380,18 @@
     <EmbeddedResource Include="Account\NewDebit.resx">
       <DependentUpon>NewDebit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Payments\Completed_Payment.resx">
+      <DependentUpon>Completed_Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments\Create_New_Payment.resx">
+      <DependentUpon>Create_New_Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments\Payment_Details.resx">
+      <DependentUpon>Payment_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments\Pending_Payment.resx">
+      <DependentUpon>Pending_Payment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Shipping\Completed_Shipping.resx">
       <DependentUpon>Completed_Shipping.cs</DependentUpon>
     </EmbeddedResource>
@@ -394,12 +418,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Internal Operation\InternalOperation.resx">
       <DependentUpon>InternalOperation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Payments\Payments.resx">
-      <DependentUpon>Payments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Payments\PayPayment.resx">
-      <DependentUpon>PayPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Purchase\Pending_Purchase.resx">
       <DependentUpon>Pending_Purchase.cs</DependentUpon>

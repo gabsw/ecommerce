@@ -182,7 +182,7 @@ namespace ecommerce
             f.Show();
         }
 
-
+        // Display new form Internal Operations
         private void InternalOperationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
@@ -193,16 +193,8 @@ namespace ecommerce
             f.Show();
         }
 
-        private void PaymentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.IsMdiContainer = true;
 
-            Payments f = new Payments();
-
-            f.MdiParent = this;
-            f.Show();
-        }
-
+        // Display new form Completed Reviews
         private void completedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
@@ -213,6 +205,7 @@ namespace ecommerce
             f.Show();
         }
 
+        // Display new form Pending Reviews
         private void pendingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
@@ -223,6 +216,7 @@ namespace ecommerce
             f.Show();
         }
 
+        // Display new form Completed Purchases
         private void completedToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
@@ -233,6 +227,7 @@ namespace ecommerce
             f.Show();
         }
 
+        // Display new form Pending Purchases
         private void pendingToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
@@ -243,6 +238,7 @@ namespace ecommerce
             f.Show();
         }
 
+        // Display new form Completed Shipping
         private void completedToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
@@ -253,6 +249,7 @@ namespace ecommerce
             f.Show();
         }
 
+        // Display new form Ongoing Shipping
         private void ongoingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
@@ -263,11 +260,34 @@ namespace ecommerce
             f.Show();
         }
 
+        // Display new form Pending Shipping
         private void pendingToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
 
             Pending_Shipping f = new Pending_Shipping();
+
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        // Display new form Completed Payment
+        private void completedToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Completed_Payment f = new Completed_Payment();
+
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        // Display new form Pending Payment
+        private void pendingToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+
+            Pending_Payment f = new Pending_Payment();
 
             f.MdiParent = this;
             f.Show();

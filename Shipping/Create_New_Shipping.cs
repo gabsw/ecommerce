@@ -57,7 +57,7 @@ namespace ecommerce
             }
             catch (Exception ex)
             {
-                FormValidation.showError("The dispatch date must comply with the format below.");
+                FormValidation.showError("The dispatch date has formatting issues.");
                 return;
             }
 

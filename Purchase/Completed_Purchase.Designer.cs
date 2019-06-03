@@ -40,7 +40,7 @@
             this.addButton = new System.Windows.Forms.Button();
             this.purchCompLV = new System.Windows.Forms.ListView();
             this.purchase = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.productCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.auction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buyer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.seller = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.finalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -144,7 +144,7 @@
             // 
             this.purchCompLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.purchase,
-            this.productCode,
+            this.auction,
             this.buyer,
             this.seller,
             this.finalPrice});
@@ -165,11 +165,11 @@
             this.purchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.purchase.Width = 72;
             // 
-            // productCode
+            // auction
             // 
-            this.productCode.Text = "Product Code";
-            this.productCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.productCode.Width = 90;
+            this.auction.Text = "Auction ID";
+            this.auction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.auction.Width = 90;
             // 
             // buyer
             // 
@@ -227,7 +227,7 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.ListView purchCompLV;
         private System.Windows.Forms.ColumnHeader purchase;
-        private System.Windows.Forms.ColumnHeader productCode;
+        private System.Windows.Forms.ColumnHeader auction;
         private System.Windows.Forms.ColumnHeader buyer;
         private System.Windows.Forms.ColumnHeader seller;
         private System.Windows.Forms.ColumnHeader finalPrice;

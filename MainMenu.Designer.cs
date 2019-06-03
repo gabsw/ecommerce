@@ -45,6 +45,8 @@
             this.closedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.completedToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendingToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buyerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sellerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -199,10 +201,26 @@
             // 
             // paymentsToolStripMenuItem
             // 
+            this.paymentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.completedToolStripMenuItem3,
+            this.pendingToolStripMenuItem3});
             this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
             this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.paymentsToolStripMenuItem.Text = "Payments";
-            this.paymentsToolStripMenuItem.Click += new System.EventHandler(this.PaymentsToolStripMenuItem_Click);
+            // 
+            // completedToolStripMenuItem3
+            // 
+            this.completedToolStripMenuItem3.Name = "completedToolStripMenuItem3";
+            this.completedToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.completedToolStripMenuItem3.Text = "Completed";
+            this.completedToolStripMenuItem3.Click += new System.EventHandler(this.completedToolStripMenuItem3_Click);
+            // 
+            // pendingToolStripMenuItem3
+            // 
+            this.pendingToolStripMenuItem3.Name = "pendingToolStripMenuItem3";
+            this.pendingToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.pendingToolStripMenuItem3.Text = "Pending";
+            this.pendingToolStripMenuItem3.Click += new System.EventHandler(this.pendingToolStripMenuItem3_Click);
             // 
             // productsToolStripMenuItem1
             // 
@@ -293,21 +311,21 @@
             // completedToolStripMenuItem2
             // 
             this.completedToolStripMenuItem2.Name = "completedToolStripMenuItem2";
-            this.completedToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.completedToolStripMenuItem2.Size = new System.Drawing.Size(133, 22);
             this.completedToolStripMenuItem2.Text = "Completed";
             this.completedToolStripMenuItem2.Click += new System.EventHandler(this.completedToolStripMenuItem2_Click);
             // 
             // ongoingToolStripMenuItem
             // 
             this.ongoingToolStripMenuItem.Name = "ongoingToolStripMenuItem";
-            this.ongoingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ongoingToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.ongoingToolStripMenuItem.Text = "Ongoing";
             this.ongoingToolStripMenuItem.Click += new System.EventHandler(this.ongoingToolStripMenuItem_Click);
             // 
             // pendingToolStripMenuItem2
             // 
             this.pendingToolStripMenuItem2.Name = "pendingToolStripMenuItem2";
-            this.pendingToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.pendingToolStripMenuItem2.Size = new System.Drawing.Size(133, 22);
             this.pendingToolStripMenuItem2.Text = "Pending";
             this.pendingToolStripMenuItem2.Click += new System.EventHandler(this.pendingToolStripMenuItem2_Click);
             // 
@@ -361,6 +379,8 @@
         private System.Windows.Forms.ToolStripMenuItem completedToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem ongoingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pendingToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem completedToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem pendingToolStripMenuItem3;
     }
 }
 

@@ -62,16 +62,16 @@ namespace ecommerce
             try
             {
                 con.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
+                return;
+            }
 
-                // Check if debit is greater than current balance
-
-                if (debitAmount > balance)
-                {
-                    FormValidation.showError("The debit cannot exceed your current balance.");
-                    return;
-                }
-
-                SqlCommand cmd3 = new SqlCommand("ecommerce.sp_Create_Debit_Update_Balance", con);
+            try
+            {
+                SqlCommand cmd3 = new SqlCommand("ecommerce.sp_Create_Debit", con);
                 cmd3.CommandType = CommandType.StoredProcedure;
                 cmd3.Parameters.AddWithValue("@debitAmount", debitAmount);
                 cmd3.Parameters.AddWithValue("@IBAN", iban);
@@ -80,9 +80,9 @@ namespace ecommerce
 
                 MessageBox.Show("You have performed a new debit!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show("FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR \r\n" + ex.Message, "Connection Test", MessageBoxButtons.OK);
+                MessageBox.Show("Failed to make a new debit:\r\n" + ex.Message, "Failed Operation", MessageBoxButtons.OK);
             }
             finally
             {
@@ -93,7 +93,7 @@ namespace ecommerce
             this.Close();
         }
     }
-    
+
 
 }
 

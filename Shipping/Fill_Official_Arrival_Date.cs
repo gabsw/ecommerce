@@ -56,7 +56,7 @@ namespace ecommerce
       
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("You have ordered a new shipping!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You have entered an official arrival date!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

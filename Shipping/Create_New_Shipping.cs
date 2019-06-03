@@ -79,6 +79,8 @@ namespace ecommerce
                     cmd.Parameters.AddWithValue("@dispatchDate", dispatchDate);
                     cmd.Parameters.AddWithValue("@estimatedArrivalDate", estimatedArrivalDate);
                     cmd.Parameters.AddWithValue("@purchaseID", purchaseID);
+                    cmd.Parameters.AddWithValue("@dispatch_address", seller_address);
+                    cmd.Parameters.AddWithValue("@delivery_address", buyer_address);
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("You have ordered a new shipping!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -163,7 +165,7 @@ namespace ecommerce
                 con.Open();
                 SqlCommand cm1 = new SqlCommand("SELECT name FROM ecommerce.DELIVERY_COMPANY" +
                     " WHERE hasExpressDelivery = @hasExpressDelivery", con);
-                cm1.Parameters.Add("@hasExpressDelivery", SqlDbType.Bit).Value = purchaseID;
+                cm1.Parameters.Add("@hasExpressDelivery", SqlDbType.Bit).Value = hasExpressDelivery;
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 

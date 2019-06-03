@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ecommerce
 {
-    public partial class Completed_Shipping : Form
+    public partial class Ongoing_Shipping : Form
     {
-        public Completed_Shipping()
+        public Ongoing_Shipping()
         {
             InitializeComponent();
         }
@@ -23,25 +23,25 @@ namespace ecommerce
             buyerBox.Text = "";
             purchaseBox.Text = "";
             deliveryBox.Text = "";
-            shipCompLV.Items.Clear();
+            shippingONLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
-            shipCompLV.Items.Clear();
+            shippingONLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
 
-        private void Completed_Shipping_Load(object sender, EventArgs e)
+        private void Ongoing_Shipping_Load(object sender, EventArgs e)
         {
             sellerBox.Items.Clear();
             buyerBox.Items.Clear();
             purchaseBox.Items.Clear();
             deliveryBox.Items.Clear();
-            shipCompLV.Items.Clear();
+            shippingONLV.Items.Clear();
             populateSellerBox();
             populateBuyerBox();
             populateDeliveryBox();
@@ -51,28 +51,28 @@ namespace ecommerce
 
         private void sellerBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            shipCompLV.Items.Clear();
+            shippingONLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
 
         private void buyerBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            shipCompLV.Items.Clear();
+            shippingONLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
 
         private void purchaseBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            shipCompLV.Items.Clear();
+            shippingONLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
 
         private void deliveryBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            shipCompLV.Items.Clear();
+            shippingONLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
@@ -84,7 +84,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Seller_Username FROM ecommerce.VIEW_COMPLETED_SHIPPING", con);
+                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Seller_Username FROM ecommerce.VIEW_ONGOING_SHIPPING", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
@@ -110,7 +110,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Buyer_Username FROM ecommerce.VIEW_COMPLETED_SHIPPING", con);
+                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Buyer_Username FROM ecommerce.VIEW_ONGOING_SHIPPING", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
@@ -137,7 +137,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT purchaseID FROM ecommerce.VIEW_COMPLETED_SHIPPING", con);
+                SqlCommand cm1 = new SqlCommand("SELECT purchaseID FROM ecommerce.VIEW_ONGOING_SHIPPING", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
@@ -163,7 +163,7 @@ namespace ecommerce
             try
             {
                 con.Open();
-                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Delivery_Company_Name FROM ecommerce.VIEW_COMPLETED_SHIPPING", con);
+                SqlCommand cm1 = new SqlCommand("SELECT DISTINCT Delivery_Company_Name FROM ecommerce.VIEW_ONGOING_SHIPPING", con);
 
                 SqlDataReader rd1 = cm1.ExecuteReader();
 
@@ -215,7 +215,7 @@ namespace ecommerce
             {
                 con.Open();
 
-                SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.VIEW_COMPLETED_SHIPPING " +
+                SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.VIEW_ONGOING_SHIPPING " +
                     "WHERE Seller_Username LIKE @Seller " +
                     "AND Buyer_Username LIKE @Buyer " +
                     "AND Delivery_Company_Name LIKE @Delivery " +
@@ -236,9 +236,9 @@ namespace ecommerce
                     item.SubItems.Add(rd1["Buyer_Username"].ToString());
                     item.SubItems.Add(rd1["Seller_Username"].ToString());
                     item.SubItems.Add(rd1["Delivery_Company_Name"].ToString());
-                    item.SubItems.Add(rd1["Official_Arrival_Date"].ToString());
+                    item.SubItems.Add(rd1["Estimated_Arrival_Date"].ToString());
 
-                    shipCompLV.Items.Add(item);
+                    shippingONLV.Items.Add(item);
                 }
 
             }
@@ -254,13 +254,13 @@ namespace ecommerce
 
         private void readButton_Click(object sender, EventArgs e)
         {
-            if (shipCompLV.SelectedItems.Count == 1)
+            if (shippingONLV.SelectedItems.Count == 1)
             {
-                ListViewItem item = shipCompLV.SelectedItems[0];
+                ListViewItem item = shippingONLV.SelectedItems[0];
 
                 int shippingCode = Convert.ToInt32(item.SubItems[0].Text);
 
-                Read_Shipping_Details f = new Read_Shipping_Details(shippingCode);
+                Read_Shipping_Details f = new Read_Shipping_Details(shippingCode, "Ongoing");
                 f.Show();
             }
             else
@@ -269,10 +269,33 @@ namespace ecommerce
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            shipCompLV.Items.Clear();
+            shippingONLV.Items.Clear();
+            populateListView();
+            this.Refresh();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (shippingONLV.SelectedItems.Count == 1)
+            {
+                ListViewItem item = shippingONLV.SelectedItems[0];
+
+                int shippingCode = Convert.ToInt32(item.SubItems[0].Text);
+
+                Fill_Official_Arrival_Date f = new Fill_Official_Arrival_Date(shippingCode);
+                f.Show();
+            }
+            else
+            {
+                MessageBox.Show("You need to choose a shipping to complete.", "Error alert",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            shippingONLV.Items.Clear();
             populateListView();
             this.Refresh();
         }
     }
+    
     
 }

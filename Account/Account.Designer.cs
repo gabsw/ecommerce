@@ -47,10 +47,10 @@
             this.AcclistView.FullRowSelect = true;
             this.AcclistView.GridLines = true;
             this.AcclistView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.AcclistView.Location = new System.Drawing.Point(117, 73);
+            this.AcclistView.Location = new System.Drawing.Point(106, 28);
             this.AcclistView.MultiSelect = false;
             this.AcclistView.Name = "AcclistView";
-            this.AcclistView.Size = new System.Drawing.Size(257, 226);
+            this.AcclistView.Size = new System.Drawing.Size(278, 269);
             this.AcclistView.TabIndex = 1;
             this.AcclistView.UseCompatibleStateImageBehavior = false;
             this.AcclistView.View = System.Windows.Forms.View.Details;
@@ -67,9 +67,9 @@
             // 
             // balance
             // 
-            this.balance.Text = "Balance";
+            this.balance.Text = "Balance (€)";
             this.balance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.balance.Width = 74;
+            this.balance.Width = 105;
             // 
             // credButton
             // 

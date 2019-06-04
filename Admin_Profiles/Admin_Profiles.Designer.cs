@@ -49,7 +49,7 @@
             this.AdminListView.Location = new System.Drawing.Point(53, 80);
             this.AdminListView.MultiSelect = false;
             this.AdminListView.Name = "AdminListView";
-            this.AdminListView.Size = new System.Drawing.Size(446, 215);
+            this.AdminListView.Size = new System.Drawing.Size(509, 215);
             this.AdminListView.TabIndex = 1;
             this.AdminListView.UseCompatibleStateImageBehavior = false;
             this.AdminListView.View = System.Windows.Forms.View.Details;
@@ -69,11 +69,11 @@
             // 
             this.admin_email.Text = "E-mail";
             this.admin_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.admin_email.Width = 181;
+            this.admin_email.Width = 242;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(106, 318);
+            this.addButton.Location = new System.Drawing.Point(140, 321);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(72, 25);
             this.addButton.TabIndex = 2;
@@ -83,7 +83,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(228, 318);
+            this.updateButton.Location = new System.Drawing.Point(262, 321);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(72, 25);
             this.updateButton.TabIndex = 3;
@@ -93,7 +93,7 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(358, 318);
+            this.refreshButton.Location = new System.Drawing.Point(392, 321);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(72, 25);
             this.refreshButton.TabIndex = 4;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 450);
+            this.ClientSize = new System.Drawing.Size(676, 450);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.addButton);

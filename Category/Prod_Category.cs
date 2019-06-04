@@ -43,7 +43,8 @@ namespace ecommerce
 
                 int code = Convert.ToInt32(item.SubItems[0].Text);
                 String name = item.SubItems[1].Text;
-                int vat = Convert.ToInt32(item.SubItems[2].Text);
+                decimal vat = Convert.ToDecimal(item.SubItems[2].Text);
+
 
                 UpdateCat f2 = new UpdateCat(code, name, vat);
                 f2.Show();

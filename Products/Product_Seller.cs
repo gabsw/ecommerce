@@ -40,7 +40,7 @@ namespace ecommerce
                 int code = Convert.ToInt32(item.SubItems[0].Text);
                 String product_name = item.SubItems[1].Text;
                 String category_name = item.SubItems[2].Text;
-                String description = item.SubItems[3].Text;
+                String description = item.SubItems[6].Text;
                 
                 if (getStatus(code) == "Available")
                 {

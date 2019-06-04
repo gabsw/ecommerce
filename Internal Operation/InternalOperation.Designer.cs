@@ -32,8 +32,8 @@
             this.ioID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ioCommission = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ioVATCollected = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ioDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ioPaymentCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ioDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.closeButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,22 +77,22 @@
             this.ioVATCollected.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ioVATCollected.Width = 115;
             // 
-            // ioDate
-            // 
-            this.ioDate.Text = "Date";
-            this.ioDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ioDate.Width = 201;
-            // 
             // ioPaymentCode
             // 
             this.ioPaymentCode.Text = "Payment Code";
             this.ioPaymentCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ioPaymentCode.Width = 126;
             // 
+            // ioDate
+            // 
+            this.ioDate.Text = "Date";
+            this.ioDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ioDate.Width = 201;
+            // 
             // closeButton
             // 
             this.closeButton.Location = new System.Drawing.Point(486, 350);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(2);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(94, 38);
             this.closeButton.TabIndex = 3;
@@ -103,7 +103,7 @@
             // refreshButton
             // 
             this.refreshButton.Location = new System.Drawing.Point(36, 344);
-            this.refreshButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(2);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(94, 44);
             this.refreshButton.TabIndex = 4;
@@ -163,9 +163,9 @@
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.InternalOperationLV);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InternalOperation";
-            this.Text = "InternalOperation";
+            this.Text = "Internal Operations";
             this.Load += new System.EventHandler(this.InternalOperation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

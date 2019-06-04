@@ -8,7 +8,7 @@ namespace ecommerce
     public partial class UpdateCat : Form
     {
         private int code;
-        public UpdateCat(int code, String name, int vat)
+        public UpdateCat(int code, String name, decimal vat)
         {
             InitializeComponent();
             name_label.Text = name;
@@ -33,14 +33,14 @@ namespace ecommerce
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            int vat;
+            decimal vat;
             try
             {
-                vat = Convert.ToInt32(VATBox.Text);
+                vat = Convert.ToDecimal(VATBox.Text);
             }
             catch (Exception ex)
             {
-                FormValidation.showError("VAT must be an integer.");
+                FormValidation.showError("VAT must be a decimal.");
                 return;
             }
 
@@ -52,11 +52,10 @@ namespace ecommerce
 
                 if (vat < 0)
                 {
-                    FormValidation.showError("VAT must be a positive integer.");
+                    FormValidation.showError("VAT must be a positive decimal.");
                     return;
                 }
-
-                // SP não inserido
+                
                 SqlCommand cm2 = new SqlCommand("ecommerce.sp_Update_Product_Category", con);
                 cm2.CommandType = CommandType.StoredProcedure;
                 cm2.Parameters.AddWithValue("@Code", code);

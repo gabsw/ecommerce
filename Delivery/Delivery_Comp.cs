@@ -68,9 +68,11 @@ namespace ecommerce
         {
             SqlConnection con = DbConnectionFactory.newConnection();
 
-            if (delivery_company_name == "")
+            String company_name = "%";
+
+            if (delivery_company_name != null)
             {
-                delivery_company_name = "%";
+                company_name = delivery_company_name.ToString();
             }
 
             try
@@ -80,7 +82,7 @@ namespace ecommerce
                 {
                     SqlCommand cm1 = new SqlCommand("SELECT * FROM ecommerce.DELIVERY_COMPANY " +
                         "WHERE name LIKE @Company_Name", con);
-                    cm1.Parameters.Add("@Company_Name", SqlDbType.VarChar).Value = delivery_company_name;
+                    cm1.Parameters.Add("@Company_Name", SqlDbType.VarChar).Value = company_name;
 
                     SqlDataReader rd1 = cm1.ExecuteReader();
 

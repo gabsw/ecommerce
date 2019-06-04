@@ -33,11 +33,7 @@ namespace ecommerce
                 con.Open();
 
                 String query = "SELECT Min_Valid_Bid " +
-                               "FROM ecommerce.VIEW_MIN_VALID_BID AS mvb " +
-                               "JOIN ecommerce.VIEW_AUCTION_DETAILS AS ad " +
-                               "ON mvb.auctionID = ad.auctionID " +
-                               "LEFT OUTER JOIN ecommerce.VIEW_WINNING_BID AS wb " +
-                               "ON ad.auctionID = wb.auction_ID " +
+                               "FROM ecommerce.VIEW_MIN_VALID_BID " +
                                "WHERE mvb.auctionID = @auctionID";
 
                 SqlCommand cm1 = new SqlCommand(query, con);

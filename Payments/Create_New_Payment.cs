@@ -117,6 +117,12 @@ namespace ecommerce
                 cmd.Parameters.AddWithValue("@purchaseID", purchaseID);
                 cmd.ExecuteNonQuery();
 
+                int paymentCode = getPaymentCode(purchaseID);
+                SqlCommand cmd2 = new SqlCommand("ecommerce.sp_Payment_Processing", con);
+                cmd2.CommandType = CommandType.StoredProcedure;
+                cmd2.Parameters.AddWithValue("@paymentCode", paymentCode);
+                cmd2.ExecuteNonQuery();
+
                 MessageBox.Show("You have made a new payment!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -130,6 +136,25 @@ namespace ecommerce
 
             clear_text();
             this.Close();
+        }
+
+        private int getPaymentCode(int purchaseID)
+        {
+            SqlConnection con = DbConnectionFactory.newConnection();
+            try
+            {
+                con.Open();
+
+                SqlCommand cm1 = new SqlCommand("SELECT code FROM ecommerce.PAYMENT WHERE purchaseID = @PurchaseID", con);
+                cm1.Parameters.Add("@PurchaseID", SqlDbType.Int).Value = purchaseID;
+                SqlDataReader rd1 = cm1.ExecuteReader();
+                rd1.Read();
+                return (int) rd1["code"];
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }

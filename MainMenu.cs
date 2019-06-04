@@ -17,6 +17,7 @@ namespace ecommerce
 
             ThreadStart childref = new ThreadStart(closeAuctions);
             Thread childThread = new Thread(childref);
+            childThread.IsBackground = true;
             childThread.Start();
         }
 

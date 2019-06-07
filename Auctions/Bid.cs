@@ -34,7 +34,7 @@ namespace ecommerce
 
                 String query = "SELECT Min_Valid_Bid " +
                                "FROM ecommerce.VIEW_MIN_VALID_BID " +
-                               "WHERE mvb.auctionID = @auctionID";
+                               "WHERE auctionID = @auctionID";
 
                 SqlCommand cm1 = new SqlCommand(query, con);
 
